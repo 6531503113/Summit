@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./addjob.css";
 
 function Addjob() {
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     navigate("/home");
@@ -35,100 +35,67 @@ function Addjob() {
 
         <div className="job-form-container">
           <form className="job-form">
-            <div className="form-section">
-              <label>Job position</label>
-              <select>
-                <option value="">Select Position</option>
-                {/* Add job positions here */}
-              </select>
-            </div>
+            <div className="form-row">
+              <div className="form-section left">
+                <label>Job position</label>
+                <select className="short-input">
+                  <option value="">Select job position</option>
+                  <option value="developer">Developer</option>
+                  <option value="designer">Designer</option>
+                  <option value="manager">Manager</option>
+                </select>
 
-            <div className="form-section">
-              <label>Job description</label>
-              <div className="description-features">
-                <input type="text" placeholder="Job description" className="half-width" />
-                <textarea placeholder="Responsibilities" className="half-width"></textarea>
+                <label>Job description</label>
+                {/* ลบข้อความ Job description ที่เป็นสีเทาออก */}
+                
+                <label>Number accepted</label>
+                <input type="number" placeholder="Number of employees" />
+
+                <label>Work format</label>
+                <select>
+                  <option value="">Select format</option>
+                  <option value="full-time">Full-time</option>
+                  <option value="part-time">Part-time</option>
+                </select>
+
+                <label>Work location</label>
+                <select>
+                  <option value="">Select location</option>
+                </select>
+
+                <label>Salary (Bath)</label>
+                <input type="number" placeholder="Salary" />
+
+                <label>Working hours</label>
+                <input className="short-input" type="text" placeholder="Working hours" />
+
+                <label>Responsibilities</label>
+                <textarea placeholder="Responsibilities"></textarea>
               </div>
-            </div>
 
-            <div className="form-section">
-              <label>Number accepted</label>
-              <input type="number" placeholder="Number of employees" />
-            </div>
+              <div className="form-section right">
+                <label>Features</label>
 
-            <div className="form-section">
-              <label>Work format</label>
-              <select>
-                <option value="">Select format</option>
-                <option value="full-time">Full-time</option>
-                <option value="part-time">Part-time</option>
-              </select>
-            </div>
+                <label>Application accepted until</label>
+                <input type="date" />
 
-            <div className="form-section">
-              <label>Work location</label>
-              <select>
-                <option value="">Select location</option>
-                {/* Add locations here */}
-              </select>
-            </div>
+                <label>Gender</label>
+                <select>
+                  <option value="">Select Gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
 
-            <div className="form-section">
-              <label>Salary (Bath)</label>
-              <input type="number" placeholder="Salary" />
-            </div>
+                <label>Age (years)</label>
+                <input type="number" placeholder="Age" />
 
-            <div className="form-section">
-              <label>Holiday</label>
-              <div className="days-of-week">
-                <label><input type="checkbox" /> MON</label>
-                <label><input type="checkbox" /> TUE</label>
-                <label><input type="checkbox" /> WED</label>
-                <label><input type="checkbox" /> THU</label>
-                <label><input type="checkbox" /> FRI</label>
-                <label><input type="checkbox" /> SAT</label>
-                <label><input type="checkbox" /> SUN</label>
-              </div>
-            </div>
-
-            <div className="form-section">
-              <label>Working hours</label>
-              <input type="text" placeholder="Working hours" />
-            </div>
-
-            <div className="form-section">
-              <label>Application accepted until</label>
-              <input type="date" />
-            </div>
-
-            <div className="form-section">
-              <label>Gender</label>
-              <select>
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-              </select>
-            </div>
-
-            <div className="form-section">
-              <label>Age (years)</label>
-              <input type="number" placeholder="Age" />
-            </div>
-
-            <div className="form-section">
-              <label>Education level</label>
-              <select>
-                <option value="">Select Education level</option>
-                <option value="high-school">High School</option>
-                <option value="bachelor">Bachelor's Degree</option>
-                <option value="master">Master's Degree</option>
-              </select>
-            </div>
-
-            <div className="form-section">
-              <label>Additional features</label>
-              <div className="description-features">
-                <input type="text" placeholder="Additional features" className="half-width" />
+                <label>Education level</label>
+                <select>
+                  <option value="">Select Education level</option>
+                  <option value="high-school">High School</option>
+                  <option value="bachelor">Bachelor's Degree</option>
+                  <option value="master">Master's Degree</option>
+                </select>
               </div>
             </div>
 
