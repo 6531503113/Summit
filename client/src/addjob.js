@@ -43,6 +43,7 @@ function Addjob() {
                   <option value="developer">Developer</option>
                   <option value="designer">Designer</option>
                   <option value="manager">Manager</option>
+                  
                 </select>
 
                 <label>Job description</label>

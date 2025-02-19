@@ -19,6 +19,7 @@ function AddAnnouncement() {
         <div className="logo"></div>
         <h2>Recruiting</h2> {/* เปลี่ยนจาก Admin เป็น Recruiting */}
         <ul>
+          
           <li><a href="/ไปไหน"><i className="fas fa-user"></i>Personal information</a></li>
           <li><a href="/addAnnouncement">Announcement</a></li>
           <h4>Recruitment</h4>
