@@ -33,6 +33,10 @@
   color: white;
   text-decoration: none;
   display: block;
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
 }
 
 .sidebar ul li a:hover {
@@ -62,34 +66,67 @@
 
 .main-content {
   margin-left: 250px;
+<<<<<<< HEAD
   padding: 20px;
   background: #ffffff;
+=======
+  padding: 40px;
+  background: #ffffff;
+  width: calc(100% - 250px);
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
 }
 
 .job-form-container {
   background: white;
+<<<<<<< HEAD
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   position: relative;
+=======
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
 }
 
 .job-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
+<<<<<<< HEAD
   margin-left: 30px;
+=======
+  
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
 }
 
 .form-row {
   display: flex;
   gap: 20px;
+<<<<<<< HEAD
   margin-left: 20px;
+=======
+  margin-top: 10px;
+  
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
 }
 
 .form-section {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   width: calc(50% - 10px);
   padding-left: 10px;
 }
@@ -99,6 +136,8 @@
 }
 
 .form-section.right {
+=======
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
   width: 50%;
 }
 
@@ -110,6 +149,7 @@
 .job-form input,
 .job-form select,
 .job-form textarea {
+<<<<<<< HEAD
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -119,19 +159,34 @@
 
 .short-input {
   max-width: 250px;
+=======
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
 }
 
 textarea {
   resize: vertical;
+<<<<<<< HEAD
   height: 120px;
+=======
+  height: 100px;
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
 }
 
 .form-buttons {
   display: flex;
   gap: 20px;
+<<<<<<< HEAD
   position: absolute;
   bottom: 20px;
   right: 20px;
+=======
+  justify-content: flex-end;
+  margin-top: 20px;
+>>>>>>> 208ec9e8029192f56cbd0098cfea563c41eae71e
 }
 
 .draft-button,
