@@ -1,0 +1,345 @@
+.recruitment-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #253D90;
+  color: white;
+  padding: 15px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 50px;
+  margin-bottom: 15px;
+  background-color: #253D90;
+  border-radius: 4px;
+}
+
+.sidebar-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-subheader {
+  font-size: 14px;
+  font-weight: 600;
+  color: #a9b7d0;
+  margin: 10px 0 8px;
+  padding-left: 8px;
+}
+
+.sidebar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar-link.active {
+  background-color: #34495e;
+  font-weight: 600;
+}
+
+.sidebar-link:hover {
+  background-color: #34495e;
+}
+
+.logout-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #ecf0f1;
+  overflow-y: auto;
+}
+
+.header {
+  background-color: white;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Checklist Table and Save Button */
+.checklist-table {
+  background-color: #d9d9d9;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 10px auto;
+  max-width: 800px;
+  width: 90%;
+}
+
+.checklist-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.checklist-table th,
+.checklist-table td {
+  padding: 12px 16px; /* Consistent padding for even spacing */
+  text-align: center; /* Center-align content for consistency */
+  border-bottom: 1px solid #ddd;
+}
+
+.checklist-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.checklist-table td {
+  background-color: white;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+
+.checklist-table input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #253D90;
+  cursor: pointer;
+  margin: 0; /* Remove default margin for precise control */
+  margin-right: 8px; /* Add spacing between checkbox and any text (if added) */
+}
+
+.save-button {
+  background-color: #ff0000; /* Bright red for Save button */
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  margin: 15px auto 0;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3); /* Red shadow to match */
+  max-width: 125px;
+  width: 100%;
+}
+
+.save-button:hover {
+  background-color: #cc0000; /* Darker red for hover state */
+  transform: translateY(-1px);
+}
+
+/* Personnel Information Styles */
+.personnel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 300px;
+  outline: none;
+}
+
+.add-button {
+  background-color: #ff0000; /* Red for Add button */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3);
+}
+
+.add-button:hover {
+  background-color: #cc0000; /* Darker red for hover state */
+  transform: translateY(-1px);
+}
+
+.personnel-list {
+  background-color: #d9d9d9;
+  padding: 15px;
+  border-radius: 6px;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.personnel-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.personnel-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.personnel-item span {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.more-button {
+  background-color: #ff0000; /* Red for more button */
+  color: white;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.3);
+}
+
+.more-button:hover {
+  background-color: #cc0000; /* Darker red for hover state */
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .personnel-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+
+  .personnel-list {
+    max-width: 100%;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .personnel-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .personnel-item span {
+    margin-bottom: 5px;
+    flex: none;
+  }
+
+  .more-button {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .checklist-table {
+    max-width: 100%;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .checklist-table table {
+    font-size: 14px;
+  }
+
+  .checklist-table th,
+  .checklist-table td {
+    padding: 8px 12px; /* Reduced padding for mobile */
+    text-align: center;
+  }
+
+  .checklist-table input[type="checkbox"] {
+    margin-right: 6px; /* Reduced spacing for mobile */
+  }
+
+  .save-button {
+    width: 80%;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
