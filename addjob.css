@@ -96,7 +96,7 @@
 }
 
 /* แบ่ง 2 คอลัมน์ */
-.form-grid {
+.form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -113,8 +113,9 @@
 .form-buttons {
   display: flex;
   gap: 15px;
-  justify-content: flex-end;
+  justify-content: flex-end; /* Ensures buttons stay on the right */
   margin-top: 30px;
+  padding-right: 20px; /* Adds a small padding on the right to align with the frame's edge */
 }
 
 .draft-button, .save-button {
@@ -125,6 +126,7 @@
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
+  width: 100px; /* Set equal width for both buttons */
 }
 
 .draft-button {

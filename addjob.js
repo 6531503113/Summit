@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./addjob.css";
 
@@ -20,8 +20,8 @@ function Addjob() {
     education_level: ""
   });
 
-
   const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setJobData({
@@ -70,14 +70,13 @@ function Addjob() {
         <div className="logo"></div>
         <h2 className="sidebar-title">Admin</h2>
         <ul className="sidebar-menu">
-          <li><Link to="/personnelinformation" className="sidebar-link active"> Personal Information</Link></li>
+          <li><Link to="/personnelinformation" className="sidebar-link">Personal Information</Link></li>
           <li><Link to="/addAnnouncement" className="sidebar-link">Announcement</Link></li>
           <h4 className="sidebar-subheader">Recruitment</h4>
           <li><Link to="/jobs" className="sidebar-link">Jobs</Link></li>
           <li><Link to="/examinationresults" className="sidebar-link">Examination Results</Link></li>
           <li><Link to="/checklist" className="sidebar-link">Check List</Link></li>
         </ul>
-
         <div className="logout-container">
           <button className="logout-button" onClick={() => navigate("/")}>Log Out</button>
         </div>
@@ -85,7 +84,7 @@ function Addjob() {
 
       <div className="main-content">
         <header className="header">
-          <h1>Recruiting </h1>
+          <h1>Recruiting employees</h1>
         </header>
 
         <div className="job-form-container">
@@ -122,7 +121,7 @@ function Addjob() {
                   placeholder="Number of employees" 
                 />
 
-               <label>Work format</label>
+                <label>Work format</label>
                 <select 
                   name="work_format_id" 
                   value={jobData.work_format_id} 

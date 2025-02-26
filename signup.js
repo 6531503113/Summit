@@ -53,7 +53,6 @@ function Signup() {
 
     return (
         <div className="signup-container">
-            
             <div className="signup-form">
                 <div className="logo" />
                 <h2>Welcome to Summit Computer</h2>
@@ -98,53 +97,53 @@ function Signup() {
                     />
                     {errors.phone && <span className="error-text">{errors.phone}</span>}
 
-                    {/* Email Address */}
-                    <label>Email Address</label>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter Email"
-                        onChange={handleInput}
-                        className="input-field"
-                    />
-                    {errors.email && <span className="error-text">{errors.email}</span>}
+                    {/* Email Address และส่วนล่าง */}
+                    <div className={`email-section ${errors.phone ? 'with-phone-error' : ''}`}>
+                        <label>Email Address</label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter Email"
+                            onChange={handleInput}
+                            className="input-field"
+                        />
+                        {errors.email && <span className="error-text">{errors.email}</span>}
 
-                    {/* Password & Confirm Password */}
-                    <div className="password-container">
-                        <div className="password-field">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="Enter Password"
-                                onChange={handleInput}
-                                className="input-field"
-                            />
-                            {errors.password && <span className="error-text">{errors.password}</span>}
+                        {/* Password & Confirm Password */}
+                        <div className="password-container">
+                            <div className="password-field">
+                                <label>Password</label>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Enter Password"
+                                    onChange={handleInput}
+                                    className="input-field"
+                                />
+                                {errors.password && <span className="error-text">{errors.password}</span>}
+                            </div>
+
+                            <div className="password-field">
+                                <label>Confirm Password</label>
+                                <input
+                                    type="password"
+                                    name="confirmPassword"
+                                    placeholder="Confirm Password"
+                                    onChange={handleInput}
+                                    className="input-field"
+                                />
+                                {errors.confirmPassword && <span className="error-text">{errors.confirmPassword}</span>}
+                            </div>
                         </div>
 
-                        <div className="password-field">
-                            <label>Confirm Password</label>
-                            <input
-                                type="password"
-                                name="confirmPassword"
-                                placeholder="Confirm Password"
-                                onChange={handleInput}
-                                className="input-field"
-                            />
-                            {errors.confirmPassword && <span className="error-text">{errors.confirmPassword}</span>}
-                        </div>
+                        <Link to="/" className="create-account">Already have an account?</Link>
+                        <button type="submit" className="signin-btn">Register</button>
                     </div>
-
-                    <Link to="/" className="create-account">Already have an account?</Link>
-                    <button type="submit" className="signin-btn">Register</button>
                 </form>
             </div>
 
             {/* Signup Image Section */}
             <div className="signup-image"></div>
-
-
         </div>
     );
 }

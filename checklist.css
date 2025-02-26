@@ -134,8 +134,8 @@
   margin: 0;
 }
 
-/* Checklist Table and Save Button */
-.checklist-table {
+/* Checklist Section and Rows */
+.checklist-section {
   background-color: #d9d9d9;
   padding: 15px;
   border-radius: 6px;
@@ -146,46 +146,50 @@
   z-index: 1; /* อยู่เหนือภาพพื้นหลัง */
 }
 
-.checklist-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.checklist-table th,
-.checklist-table td {
-  padding: 12px 16px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-
-.checklist-table th {
-  background-color: #f8f9fa;
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-.name-cell {
+.checklist-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  padding: 12px 16px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.name-label {
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 200px; /* Ensure name has enough space */
+  text-align: left;
 }
 
 .checkbox-group {
   display: flex;
-  gap: 10px;
+  gap: 20px; /* Space between checkboxes */
+  justify-content: center; /* Center the group horizontally */
+  align-items: center; /* Center vertically */
+  flex-grow: 1; /* Allow the group to take available space */
 }
 
-.checklist-table td {
-  background-color: white;
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center checkbox and label vertically */
+  gap: 5px; /* Space between checkbox and label */
 }
 
-.checklist-table input[type="checkbox"] {
+.checkbox-container input[type="checkbox"] {
   width: 16px;
   height: 16px;
   accent-color: #253D90;
   cursor: pointer;
-  margin: 0;
+  margin: 0; /* Remove default margin */
+}
+
+.checkbox-container span {
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap; /* Prevent label text from wrapping */
 }
 
 .save-button {
@@ -227,28 +231,37 @@
     font-size: 20px;
   }
 
-  .checklist-table {
+  .checklist-section {
     max-width: 100%;
     width: 100%;
     margin: 10px 0;
   }
 
-  .checklist-table table {
-    font-size: 14px;
+  .checklist-row {
+    padding: 8px 12px;
+    flex-direction: column; /* Stack on small screens */
+    align-items: flex-start;
   }
 
-  .checklist-table th,
-  .checklist-table td {
-    padding: 8px 12px;
-    text-align: center;
+  .name-label {
+    min-width: auto; /* Reset width on small screens */
+    margin-bottom: 10px;
   }
 
   .checkbox-group {
-    gap: 8px;
+    flex-direction: row; /* Keep checkboxes in a row */
+    gap: 10px; /* Reduce gap on small screens */
+    width: 100%;
+    justify-content: space-around; /* Distribute evenly on small screens */
   }
 
-  .checklist-table input[type="checkbox"] {
-    margin-right: 6px;
+  .checkbox-container {
+    flex-direction: row; /* Align checkbox and label horizontally on small screens */
+    gap: 5px;
+  }
+
+  .checkbox-container span {
+    font-size: 12px;
   }
 
   .save-button {

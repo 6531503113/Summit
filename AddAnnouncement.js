@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./AddAnnouncement.css";
 
@@ -38,6 +38,7 @@ function AddAnnouncement() {
         });
     }
   };
+
   const handleLogout = () => {
     navigate("/"); 
   };
@@ -56,14 +57,13 @@ function AddAnnouncement() {
         <div className="logo"></div>
         <h2 className="sidebar-title">Admin</h2>
         <ul className="sidebar-menu">
-          <li><Link to="/personnelinformation" className="sidebar-link active"> Personal Information</Link></li>
+          <li><Link to="/personnelinformation" className="sidebar-link">Personal Information</Link></li>
           <li><Link to="/addAnnouncement" className="sidebar-link">Announcement</Link></li>
           <h4 className="sidebar-subheader">Recruitment</h4>
           <li><Link to="/jobs" className="sidebar-link">Jobs</Link></li>
           <li><Link to="/examinationresults" className="sidebar-link">Examination Results</Link></li>
           <li><Link to="/checklist" className="sidebar-link">Check List</Link></li>
         </ul>
-
         <div className="logout-container">
           <button className="logout-button" onClick={handleLogout}>Log Out</button>
         </div>
@@ -71,7 +71,7 @@ function AddAnnouncement() {
 
       <div className="main-content">
         <header className="header">
-          <h1>Recruiting</h1>
+          <h1>Recruiting employees</h1>
         </header>
         
         <div className="announcement-box">
@@ -80,15 +80,16 @@ function AddAnnouncement() {
               {jobs.map((job) => (
                 <li key={job.id} className="job-item">
                   <h3>{job.title}</h3>
-                  <p>{job.description}</p>
-                  <p>Location: {job.location}</p>
-                  <p>Accepted: {job.num_accepted}</p>
-                  <p>Gender: {job.gender}</p>
-                  <p>Salary: {job.salary}</p>
-                  <p>Deadline: {job.deadline}</p>
-                  <p>Workformat: {job.work_formats}</p>
-                  <button className="edit-button" onClick={() => handleEdit(job.id)}>Edit</button>
-                  <button className="delete-button" onClick={() => handleDelete(job.id)}>Delete</button> {/* ปุ่มลบ */}
+                  <div className="job-details">
+                    <p><strong>Job description:</strong> {job.description}</p>
+                    <p><strong>Location:</strong> {job.location}</p>
+                    <p><strong>Number accepted:</strong> {job.num_accepted}</p>
+                    <p><strong>Application accepted until:</strong> {new Date(job.deadline).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                  </div>
+                  <div className="job-actions">
+                    <button className="edit-button" onClick={() => handleEdit(job.id)}>Edit</button>
+                    <button className="delete-button" onClick={() => handleDelete(job.id)}>Delete</button>
+                  </div>
                 </li>
               ))}
             </ul>

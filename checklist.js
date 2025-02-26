@@ -35,6 +35,7 @@ function CheckList() {
 
   const handleSave = () => {
     console.log("Checklist saved:", checklist);
+    // Add your save logic here (e.g., API call)
     alert("Checklist saved successfully!");
   };
 
@@ -44,70 +45,65 @@ function CheckList() {
         <div className="logo"></div>
         <h2 className="sidebar-title">Admin</h2>
         <ul className="sidebar-menu">
-          <li><Link to="/profile" className="sidebar-link"><i className="fas fa-user"></i> Personal Information</Link></li>
-          <li><Link to="/announcement" className="sidebar-link">Announcement</Link></li>
+          <li><Link to="/personnelinformation" className="sidebar-link">Personal Information</Link></li>
+          <li><Link to="/addAnnouncement" className="sidebar-link">Announcement</Link></li>
           <h4 className="sidebar-subheader">Recruitment</h4>
           <li><Link to="/jobs" className="sidebar-link">Jobs</Link></li>
-          <li><Link to="/exam-results" className="sidebar-link">Examination Results</Link></li>
-          <li><Link to="/checklist" className="sidebar-link active">Check List</Link></li>
+          <li><Link to="/examinationresults" className="sidebar-link">Examination Results</Link></li>
+          <li><Link to="/checklist" className="sidebar-link">Check List</Link></li>
         </ul>
         <div className="logout-container">
           <button className="logout-button" onClick={handleLogout}>Log Out</button>
         </div>
       </aside>
 
+      {/* Main Content */}
       <div className="main-content">
         <header className="header">
           <h1 className="header-title">The check list of Programmer</h1>
         </header>
 
-        <div className="checklist-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Make employee card</th>
-                <th>e-mail</th>
-                <th>VPN</th>
-                <th>Notebook</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.entries(checklist).map(([name, fields]) => (
-                <tr key={name}>
-                  <td>{name}</td>
-                  <td>
-                    <input
-                      type="checkbox"
-                      checked={fields.employeeCard}
-                      onChange={() => handleCheckboxChange(name, "employeeCard")}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="checkbox"
-                      checked={fields.email}
-                      onChange={() => handleCheckboxChange(name, "email")}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="checkbox"
-                      checked={fields.vpn}
-                      onChange={() => handleCheckboxChange(name, "vpn")}
-                    />
-                  </td>
-                  <td>
-                    <input
-                      type="checkbox"
-                      checked={fields.notebook}
-                      onChange={() => handleCheckboxChange(name, "notebook")}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Checklist Section */}
+        <div className="checklist-section">
+          {Object.entries(checklist).map(([name, fields]) => (
+            <div key={name} className="checklist-row">
+              <span className="name-label">{name}</span>
+              <div className="checkbox-group">
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    checked={fields.employeeCard}
+                    onChange={() => handleCheckboxChange(name, "employeeCard")}
+                  />
+                  <span>Make employee card</span>
+                </div>
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    checked={fields.email}
+                    onChange={() => handleCheckboxChange(name, "email")}
+                  />
+                  <span>e-mail</span>
+                </div>
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    checked={fields.vpn}
+                    onChange={() => handleCheckboxChange(name, "vpn")}
+                  />
+                  <span>VPN</span>
+                </div>
+                <div className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    checked={fields.notebook}
+                    onChange={() => handleCheckboxChange(name, "notebook")}
+                  />
+                  <span>Notebook</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         <button className="save-button" onClick={handleSave}>Save</button>
@@ -116,4 +112,4 @@ function CheckList() {
   );
 }
 
-export default CheckList;  
+export default CheckList;

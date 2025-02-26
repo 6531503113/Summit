@@ -1,0 +1,210 @@
+.sidebar h2 {
+  color: #ffffff;
+  margin-top: 120px; /* เพิ่มระยะห่างจากโลโก้ */
+}
+
+.sidebar {
+  width: 250px;
+  background: #253D90;
+  color: rgb(203, 203, 203);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar h4 {
+  font-size: 12px;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  background: #f5f7fa; /* Light blue background like in the image */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background: #9fb6cb;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Log Out อยู่ล่างสุด */
+.logout-container {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.logout-button {
+  width: 100%;
+  padding: 10px;
+  background: #ff3a08;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout-button:hover {
+  background: #e63206;
+}
+
+.logo {
+  background: url('./assets/logo.png') no-repeat center center/contain;
+  height: 100px;
+  padding-bottom: 0;
+  position: absolute;
+  left: 20px;
+  margin: 0;
+  top: 20px;
+}
+
+.home-container h2 {
+  color: #ffffff;
+  margin-top: 125px; /* เว้นระยะจาก logo */
+}
+
+.announcement-box {
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  position: relative;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px; /* Spacing between cards */
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 1200px; /* Limit the width of the grid */
+}
+
+.job-item {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Rounded corners like in the image */
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: slight shadow for depth */
+  width: 100%; /* Ensure cards fit within grid */
+  max-width: 350px; /* Match the card width in the image */
+  height: auto; /* Allow height to adjust to content */
+  margin: 0 auto; /* Center cards within grid cells */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.job-item h3 {
+  color: #253D90; /* Match the dark blue title color from the image */
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px; /* Space below title */
+}
+
+.job-details {
+  margin-bottom: 15px; /* Space before actions */
+}
+
+.job-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5; /* Improve readability */
+}
+
+.job-details strong {
+  color: #253D90; /* Match title color for labels */
+}
+
+.job-actions {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin-top: 15px; /* Space above buttons */
+}
+
+.edit-button {
+  background: #ff0000; /* Red button like in the image */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.edit-button:hover {
+  background: #e63206;
+}
+
+.delete-button {
+  background: #ff0000; /* Red button like in the image for consistency */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #e63206;
+}
+
+.add-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #ff0000;
+}
+
+.no-announcement {
+  font-size: 30px;
+  color: #777;
+  margin-bottom: 20px; /* เพิ่มระยะห่างจากข้อความไปปุ่ม Add */
+}
+
+/* Ensure 2 rows by limiting the number of items displayed or adjusting grid if needed */
+@media (max-width: 1200px) {
+  .job-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 800px) {
+  .job-list {
+    grid-template-columns: 1fr; /* 1 card per row on very small screens */
+  }
+}
