@@ -30,38 +30,32 @@ function AddPersonnel() {
     const { name, value } = e.target;
     let processedValue = value;
 
-    // Custom validation for specific fields
     switch (name) {
       case "name":
       case "fieldOfStudy":
       case "institution":
-        // Allow only letters, spaces, and basic punctuation (e.g., hyphens, apostrophes)
         processedValue = value.replace(/[^a-zA-Z\s'-]/g, "");
         break;
       case "nationalId":
-        // Allow only numbers and prevent negative
         processedValue = value.replace(/[^0-9]/g, "").replace(/^-/, "");
         break;
       case "phoneNumber":
-        // Allow only numbers, max 10 digits
         processedValue = value.replace(/[^0-9]/g, "").slice(0, 10);
         break;
       case "graduationYear":
-        // Allow only 4-digit numbers, prevent negative
         processedValue = value.replace(/[^0-9]/g, "").slice(0, 4);
         if (processedValue.length === 4 && parseInt(processedValue) < 1900) {
-          processedValue = "1900"; // Minimum year as an example (adjust as needed)
+          processedValue = "1900";
         }
         break;
       case "gpa":
-        // Allow only numbers, one decimal point, max 2 decimal places, prevent negative
         processedValue = value.replace(/[^0-9.]/g, "").replace(/^-/, "");
         if (processedValue.split(".").length > 2) {
           processedValue = processedValue.split(".")[0] + "." + processedValue.split(".")[1].slice(0, 2);
         }
         const numericValue = parseFloat(processedValue);
         if (!isNaN(numericValue) && numericValue > 4.0) {
-          processedValue = "4.0"; // Cap GPA at 4.0 (adjust as needed)
+          processedValue = "4.0";
         }
         break;
       default:
@@ -77,7 +71,6 @@ function AddPersonnel() {
   const handleSave = () => {
     console.log("New personnel data saved:", formData);
     alert("New personnel added successfully!");
-    // Reset form after save
     setFormData({
       name: "",
       nationalId: "",
@@ -98,7 +91,7 @@ function AddPersonnel() {
   };
 
   return (
-    <div className="recruitment-container">
+    <div className="addpersonnel recruitment-container">
       <aside className="sidebar">
         <div className="logo"></div>
         <h2 className="sidebar-title">Admin</h2>
@@ -116,10 +109,11 @@ function AddPersonnel() {
       </aside>
 
       <div className="main-content">
-      <header className="header">
+        <header className="header">
           <h1 className="header-title">Personnel Information</h1>
         </header>
         <div className="form-container">
+          <h1 className="form-title">Personnel Information</h1> {/* เพิ่มหัวข้อหลักให้เหมือนในภาพ */}
           
           <div className="form-section">
             <h2>Personal Information</h2>
@@ -142,13 +136,6 @@ function AddPersonnel() {
                 pattern="[0-9]+" 
                 title="Please enter only numbers"
               />
-              <input 
-                type="text" 
-                name="address" 
-                value={formData.address} 
-                onChange={handleInputChange} 
-                placeholder="Address" 
-              />
             </div>
             <div className="form-row">
               <input 
@@ -167,15 +154,6 @@ function AddPersonnel() {
                 onChange={handleInputChange} 
                 placeholder="Email Address" 
               />
-              <select 
-                name="rights" 
-                value={formData.rights} 
-                onChange={handleInputChange}
-              >
-                <option value="">Officer</option>
-                <option value="admin">Admin</option>
-                <option value="user">User</option>
-              </select>
             </div>
             <div className="form-row">
               <input 
@@ -185,6 +163,24 @@ function AddPersonnel() {
                 onChange={handleInputChange} 
                 placeholder="Date of Birth" 
               />
+              <input 
+                type="text" 
+                name="address" 
+                value={formData.address} 
+                onChange={handleInputChange} 
+                placeholder="Address" 
+              />
+            </div>
+            <div className="form-row">
+              <select 
+                name="rights" 
+                value={formData.rights} 
+                onChange={handleInputChange}
+              >
+                <option value="">Officer</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+              </select>
               <input 
                 type="text" 
                 name="position" 
@@ -259,6 +255,8 @@ function AddPersonnel() {
                 pattern="[0-9]{4}" 
                 title="Please enter a 4-digit year (numbers only)"
               />
+            </div>
+            <div className="form-row">
               <input 
                 type="text" 
                 name="gpa" 

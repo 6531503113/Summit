@@ -1,10 +1,10 @@
-.recruitment-container {
+.addpersonnel .recruitment-container {
     display: flex;
     height: 100vh;
     font-family: 'Arial', sans-serif;
   }
   
-  .sidebar {
+  .addpersonnel .sidebar {
     width: 250px;
     background-color: #253D90;
     color: white;
@@ -12,17 +12,17 @@
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   }
   
-  .logo {
+  .addpersonnel .logo {
     height: 50px;
     margin-bottom: 15px;
-    background-color: #ffffff;
+    background-color: #253D90;
     border-radius: 4px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
   
-  .sidebar-title {
+  .addpersonnel .sidebar-title {
     text-align: center;
     font-size: 22px;
     margin-bottom: 15px;
@@ -30,13 +30,13 @@
     color: #ffffff;
   }
   
-  .sidebar-menu {
+  .addpersonnel .sidebar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
   }
   
-  .sidebar-subheader {
+  .addpersonnel .sidebar-subheader {
     font-size: 14px;
     font-weight: 600;
     color: #a9b7d0;
@@ -44,7 +44,7 @@
     padding-left: 8px;
   }
   
-  .sidebar-link {
+  .addpersonnel .sidebar-link {
     color: white;
     text-decoration: none;
     font-size: 16px;
@@ -57,21 +57,21 @@
     transition: background-color 0.2s ease-in-out;
   }
   
-  .sidebar-link.active {
+  .addpersonnel .sidebar-link.active {
     background-color: #34495e;
     font-weight: 600;
   }
   
-  .sidebar-link:hover {
+  .addpersonnel .sidebar-link:hover {
     background-color: #34495e;
   }
   
-  .logout-container {
+  .addpersonnel .logout-container {
     margin-top: 20px;
     text-align: center;
   }
   
-  .logout-button {
+  .addpersonnel .logout-button {
     background-color: #e74c3c;
     color: white;
     padding: 10px 18px;
@@ -85,12 +85,12 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .logout-button:hover {
+  .addpersonnel .logout-button:hover {
     background-color: #c0392b;
     transform: translateY(-1px);
   }
   
-  .main-content {
+  .addpersonnel .main-content {
     flex: 1;
     padding: 20px;
     background-color: #ecf0f1;
@@ -102,7 +102,7 @@
     opacity: 0.8;
   }
   
-  .main-content::before {
+  .addpersonnel .main-content::before {
     content: '';
     position: absolute;
     top: 0;
@@ -114,104 +114,103 @@
     z-index: 0;
   }
   
-  .main-content > * {
+  .addpersonnel .main-content > * {
     position: relative;
     z-index: 1;
   }
   
-  .form-container {
+  .addpersonnel .form-container {
     max-width: 800px;
     margin: 0 auto;
     background-color: #d9d9d9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* เพิ่ม padding ให้มากขึ้นเพื่อดูสมดุลกับภาพ */
+    border-radius: 12px; /* ปรับให้โค้งนิดหน่อยเหมือนในภาพ */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* เพิ่มเงาให้ดูสมจริง */
   }
   
-  .form-title {
-    font-size: 24px;
+  .addpersonnel .form-title {
+    font-size: 28px; /* ขนาดใหญ่ขึ้นเพื่อให้เหมือนในภาพ */
     font-weight: 600;
     color: #2c3e50;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     text-align: center;
   }
   
-  .form-section {
-    margin-bottom: 20px;
+  .addpersonnel .form-section {
+    margin-bottom: 25px; /* เพิ่มระยะห่างระหว่างส่วนเพื่อดูสวยงาม */
   }
   
-  .form-section h2 {
-    font-size: 18px;
+  .addpersonnel .form-section h2 {
+    font-size: 20px; /* ขนาดใหญ่ขึ้นเพื่อให้เหมือนในภาพ */
     font-weight: 600;
     color: #253D90;
     margin-bottom: 15px;
+    padding-left: 10px;
   }
   
-  /* Scoped style for AddPersonnel only, moving headings further left */
-  .main-content .form-section h2 {
-    margin-left: 0; /* Move further left by removing left margin */
-    padding-left: 10px; /* Optional: Add small left padding for spacing and better appearance */
+  .addpersonnel .main-content .form-section h2 {
+    margin-left: 0;
   }
   
-  .form-row {
+  .addpersonnel .form-row {
     display: flex;
-    gap: 15px;
+    gap: 20px; /* เพิ่มระยะห่างระหว่าง input ให้มากขึ้น */
     margin-bottom: 15px;
     flex-wrap: wrap;
   }
   
-  .form-row input,
-  .form-row select {
+  .addpersonnel .form-row input,
+  .addpersonnel .form-row select {
     flex: 1;
-    min-width: 200px;
-    padding: 10px;
+    min-width: 220px; /* ขยายความกว้าง input ให้ใหญ่ขึ้นเล็กน้อย */
+    padding: 12px; /* เพิ่ม padding ใน input */
     border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: 6px; /* ปรับขอบมนให้ดูสมัยใหม่ */
+    font-size: 16px; /* ขนาดตัวอักษรใหญ่ขึ้น */
     background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* เพิ่มเงาเล็กๆ ให้ input */
   }
   
-  .save-button {
+  .addpersonnel .save-button {
     background-color: #ff0000;
     color: white;
     border: none;
-    padding: 10px 18px;
-    border-radius: 4px;
+    padding: 12px 24px; /* ขยายปุ่มให้ใหญ่ขึ้น */
+    border-radius: 8px; /* ปรับขอบมนให้สมดุลกับภาพ */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px; /* ขนาดตัวอักษรใหญ่ขึ้น */
     font-weight: 600;
     display: block;
-    margin: 15px auto 0;
+    margin: 25px auto 0; /* ปรับระยะห่างจากฟอร์มด้านบน */
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-    box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3);
-    max-width: 125px;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3); /* เพิ่มเงาให้ปุ่ม */
+    max-width: 150px; /* ขยายความกว้างปุ่ม */
     width: 100%;
   }
   
-  .save-button:hover {
+  .addpersonnel .save-button:hover {
     background-color: #cc0000;
-    transform: translateY(-1px);
+    transform: translateY(-2px); /* เพิ่มการเคลื่อนไหวเมื่อ hover */
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
-    .sidebar {
+    .addpersonnel .sidebar {
       width: 180px;
       padding: 10px;
     }
   
-    .form-row {
+    .addpersonnel .form-row {
       flex-direction: column;
     }
   
-    .form-row input,
-    .form-row select {
+    .addpersonnel .form-row input,
+    .addpersonnel .form-row select {
       min-width: 100%;
     }
   
-    .save-button {
+    .addpersonnel .save-button {
       width: 80%;
-      font-size: 14px;
-      padding: 8px 16px;
+      font-size: 16px;
+      padding: 10px 20px;
     }
   }

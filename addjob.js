@@ -30,25 +30,22 @@ function Addjob() {
     });
   };
 
-  // ฟังก์ชันเมื่อกด Save
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ตรวจสอบข้อมูลฟอร์มว่าครบหรือไม่
     if (!jobData.title || !jobData.description || !jobData.salary || !jobData.location || !jobData.work_format_id) {
       alert("Please fill in all the required fields.");
       return;
     }
 
-    // เริ่มการส่งข้อมูลไปยังเซิร์ฟเวอร์
-    setLoading(true); // เปลี่ยนสถานะของปุ่มเป็นกำลังโหลด
+    setLoading(true);
 
     axios
       .post("http://localhost:3307/jobs", jobData)
       .then((response) => {
         console.log(response.data);
         alert("Job added successfully!");
-        navigate("/addAnnouncement"); // เปลี่ยนหน้าไปที่ /jobs หลังจากเพิ่มข้อมูลสำเร็จ
+        navigate("/addAnnouncement");
       })
       .catch((error) => {
         console.error("Error adding job:", error);
@@ -60,7 +57,7 @@ function Addjob() {
         }
       })
       .finally(() => {
-        setLoading(false); // เปลี่ยนสถานะของปุ่มกลับมาเป็นปกติ
+        setLoading(false);
       });
   };
 
@@ -221,7 +218,7 @@ function Addjob() {
               <button 
                 type="submit" 
                 className="save-button" 
-                disabled={loading} // ป้องกันการกดปุ่มหลายครั้ง
+                disabled={loading}
               >
                 {loading ? "Saving..." : "Save"}
               </button>
