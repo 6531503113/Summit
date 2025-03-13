@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";  
+import { useNavigate, Link } from "react-router-dom";  // นำเข้า Link จาก react-router-dom
 import "./announcement.css";
 
 function Announcement() {
@@ -11,11 +11,12 @@ function Announcement() {
 
   return (
     <div className="recruitment-container">
+      {/* Sidebar */}
       <aside className="sidebar">
         <div className="logo"></div>
         <h2>Admin</h2>
         <ul>
-          <li><Link to="/profile"><i className="fas fa-user"></i>Personal information</Link></li>
+          <li><Link to="/profile">Personal Information</Link></li>
           <li><Link to="/announcement">Announcement</Link></li>
           <h4>Recruitment</h4>
           <li><Link to="/jobs">Jobs</Link></li>
@@ -27,9 +28,11 @@ function Announcement() {
         </div>
       </aside>
 
+      {/* Main Content */}
       <div className="main-content">
         <header className="header">
           <h1>Announcement</h1>
+          {/* Header Buttons */}
           <div className="header-buttons">
             <button className="action-button">Add</button>
             <button className="action-button">Job</button>
@@ -37,14 +40,14 @@ function Announcement() {
           </div>
         </header>
 
-       
+        {/* Announcement Categories */}
         <div className="announcement-categories">
           <h4>
             <span className="category">Employees</span><span className="category">Internships</span>
           </h4>
         </div>
 
-        
+        {/* Job Status Section */}
         <div className="job-status">
           <h3>Available</h3>
           <div className="job-cards">

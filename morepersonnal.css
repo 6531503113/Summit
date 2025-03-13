@@ -1,239 +1,299 @@
 .recruitment-container {
-    display: flex;
-    height: 100vh;
-    font-family: 'Arial', sans-serif;
-  }
-  
+  display: flex;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  background-color: #f9fafb; /* Light neutral background */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #253d90;
+  color: white;
+  padding: 15px;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+  transition: width 0.3s ease;
+}
+
+.logo {
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #253d90;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-subheader {
+  font-size: 14px;
+  font-weight: 600;
+  color: #a9b7d0;
+  margin: 15px 0 8px;
+  padding-left: 8px;
+  text-transform: uppercase;
+}
+
+.sidebar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-link.active {
+  background-color: #34c759; /* Green for active link */
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.sidebar-link:hover {
+  background-color: #34495e;
+  color: #ffffff;
+}
+
+.logout-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(231, 76, 60, 0.2);
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  overflow-y: auto;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a2e44;
+  margin: 0;
+}
+
+/* Personal Info Card */
+.personal-info-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  background: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.personal-info-card:hover {
+  transform: translateY(-2px);
+}
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.edit-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2);
+}
+
+.edit-button:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+}
+
+.info-section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.info-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.info-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a2e44;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333333;
+  margin: 5px 0;
+  line-height: 1.6;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-item strong {
+  margin-right: 8px;
+  white-space: nowrap; /* Prevent label from wrapping */
+  flex-shrink: 0; /* Prevent label from shrinking */
+}
+
+.info-item span {
+  flex: 1; /* Allow the value to take remaining space */
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis for long values */
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.officer-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+}
+
+.officer-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .sidebar {
-    width: 250px;
-    background-color: #253D90;
-    color: white;
-    padding: 15px;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    padding: 10px;
   }
-  
-  .logo {
-    height: 50px;
-    margin-bottom: 15px;
-    background-color: #253D90;
-    border-radius: 4px;
-  }
-  
-  .sidebar-title {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 15px;
-    font-weight: 600;
-    color: #ffffff;
-  }
-  
-  .sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar-subheader {
-    font-size: 14px;
-    font-weight: 600;
-    color: #a9b7d0;
-    margin: 10px 0 8px;
-    padding-left: 8px;
-  }
-  
-  .sidebar-link {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 12px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .sidebar-link.active {
-    background-color: #34495e;
-    font-weight: 600;
-  }
-  
-  .sidebar-link:hover {
-    background-color: #34495e;
-  }
-  
-  .logout-container {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .logout-button {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 18px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-    width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logout-button:hover {
-    background-color: #c0392b;
-    transform: translateY(-1px);
-  }
-  
-  /* Main Content */
+
   .main-content {
-    flex: 1;
     padding: 20px;
-    background-color: #ecf0f1;
-    overflow-y: auto;
-    position: relative;
-    background-size: cover;
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    opacity: 0.8;
   }
-  
-  .main-content::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    opacity: 0.8;
-    z-index: 0;
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  .main-content > * {
-    position: relative;
-    z-index: 1;
+
+  .header-title {
+    font-size: 24px;
   }
-  
-  /* Personal Info Card */
+
   .personal-info-card {
-    background-color: white;
-    padding: 10px 20px; /* Reduced top padding from 20px to 10px to move content up */
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
+    max-width: 100%;
+    padding: 15px;
   }
-  
+
   .header-container {
-    display: flex;
-    justify-content: flex-end; /* Positions the button on the right side */
-    margin-bottom: 10px; /* Reduced margin-bottom to bring content closer */
+    justify-content: flex-end;
   }
-  
+
   .edit-button {
-    background-color: #ff0000;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-    box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3);
+    padding: 8px 15px;
+    font-size: 12px;
   }
-  
-  .edit-button:hover {
-    background-color: #cc0000;
-    transform: translateY(-1px);
-  }
-  
+
   .info-section {
-    margin-bottom: 10px; /* Reduced margin-bottom from 20px to 10px to bring sections closer */
+    margin-bottom: 15px;
   }
-  
+
   .info-section h3 {
     font-size: 18px;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 5px; /* Reduced margin-bottom from 10px to 5px for tighter spacing */
+    margin-bottom: 10px;
   }
-  
-  .info-section p {
-    font-size: 16px;
-    color: #333;
-    margin: 3px 0; /* Reduced margin from 5px to 3px for tighter vertical spacing */
-    line-height: 1.5;
+
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
-  
+
+  .info-item {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .button-container {
+    justify-content: center;
+  }
+
   .officer-button {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    display: block;
-    margin: 20px auto 0;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-    box-shadow: 0 2px 6px rgba(39, 174, 96, 0.3);
-    max-width: 125px;
-    width: 100%;
+    font-size: 14px;
+    padding: 8px 16px;
   }
-  
-  .officer-button:hover {
-    background-color: #219653;
-    transform: translateY(-1px);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 180px;
-      padding: 10px;
-    }
-  
-    .main-content {
-      padding: 15px;
-    }
-  
-    .personal-info-card {
-      max-width: 100%;
-      padding: 5px 15px; /* Adjusted padding for smaller screens, reduced top padding */
-    }
-  
-    .header-container {
-      justify-content: flex-end; /* Keep button on the right on small screens */
-    }
-  
-    .edit-button {
-      padding: 6px 12px;
-      font-size: 12px;
-    }
-  
-    .info-section {
-      margin-bottom: 8px; /* Reduced margin-bottom for smaller screens */
-    }
-  
-    .info-section h3 {
-      font-size: 16px;
-      margin-bottom: 3px; /* Reduced margin-bottom for smaller screens */
-    }
-  
-    .info-section p {
-      font-size: 14px;
-      margin: 2px 0; /* Reduced margin for smaller screens */
-    }
-  
-    .officer-button {
-      width: 80%;
-      font-size: 14px;
-      padding: 8px 16px;
-    }
-  }
+}

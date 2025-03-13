@@ -1,0 +1,249 @@
+/* General container styling */
+.submit-exam-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fa; /* Light gray-blue background for a clean look */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Sidebar (reused and refined) */
+  .sidebar {
+    width: 250px;
+    background: #253d90;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h2 {
+    color: #ffffff;
+    margin-top: 120px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .sidebar h4 {
+    font-size: 14px;
+    color: #d3d3d3;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 15px;
+  }
+  
+  .sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar ul li a:hover,
+  .sidebar ul li a.active {
+    background: #344e9e;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  .logout-container {
+    margin-top: auto;
+    padding-top: 20px;
+  }
+  
+  .logout-button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4d4d;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover {
+    background: #e63939;
+  }
+  
+  /* Logo styling */
+  .logo {
+    background: url("./assets/logo.png") no-repeat center center/contain;
+    height: 100px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+  
+  /* Main content */
+  .main-content {
+    margin-left: 250px;
+    padding: 30px;
+    flex: 1;
+    min-height: 100vh;
+  }
+  
+  .header h1 {
+    font-size: 28px;
+    color: #253d90; /* Dark blue for a formal look */
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  /* Exam schedule box */
+  .exam-schedule-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Wider to accommodate inputs */
+    margin: 0 auto;
+  }
+  
+  /* Table styling */
+  .exam-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .exam-table th,
+  .exam-table td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+    color: #333333;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .exam-table th {
+    background: #253d90; /* Dark blue header background */
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .exam-table td {
+    background: #ffffff;
+  }
+  
+  .exam-table tr:nth-child(even) td {
+    background: #f9f9f9; /* Slight gray for alternating rows */
+  }
+  
+  /* Input styling */
+  .exam-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .exam-input:focus {
+    outline: none;
+    border-color: #253d90;
+    box-shadow: 0 0 5px rgba(37, 61, 144, 0.2);
+  }
+  
+  .exam-input::placeholder {
+    color: #999999;
+  }
+  
+  /* Submit button */
+  .submit-button {
+    background: #253d90; /* Dark blue to match the formal theme */
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  
+  .submit-button:hover {
+    background: #344e9e;
+  }
+  
+  .submit-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* No applicants message */
+  .no-applicants {
+    font-size: 18px;
+    color: #777777;
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+    }
+  
+    .main-content {
+      margin-left: 200px;
+      padding: 15px;
+    }
+  
+    .exam-schedule-box {
+      padding: 15px;
+      max-width: 100%;
+    }
+  
+    .exam-table th,
+    .exam-table td {
+      font-size: 14px;
+      padding: 8px 10px;
+    }
+  
+    .exam-input {
+      font-size: 12px;
+      padding: 6px 8px;
+    }
+  
+    .submit-button {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  
+    .no-applicants {
+      font-size: 16px;
+      padding: 15px;
+    }
+  }

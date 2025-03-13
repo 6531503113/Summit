@@ -1,12 +1,12 @@
 .recruitment-container {
   display: flex;
   height: 100vh;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .sidebar {
   width: 250px;
-  background-color: #253D90;
+  background-color: #253d90;
   color: white;
   padding: 15px;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
@@ -15,7 +15,7 @@
 .logo {
   height: 50px;
   margin-bottom: 15px;
-  background-color: #253D90;
+  background-color: #253d90;
   border-radius: 4px;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .sidebar-link.active {
-  background-color: #34495e;
+  background-color: #34c759; /* Green for active link as in the image */
   font-weight: 600;
 }
 
@@ -91,15 +91,13 @@
 .main-content {
   flex: 1;
   padding: 20px;
-  background-color: #ecf0f1;
+  background-color: #f5f6fa; /* Light gray background as in the image */
   overflow-y: auto;
 }
 
 .header {
-  background-color: white;
-  padding: 15px 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
+  background-color: transparent; /* No background for header */
+  padding: 15px 0;
   margin-bottom: 15px;
 }
 
@@ -110,73 +108,7 @@
   margin: 0;
 }
 
-/* Checklist Table and Save Button */
-.checklist-table {
-  background-color: #d9d9d9;
-  padding: 15px;
-  border-radius: 6px;
-  margin: 10px auto;
-  max-width: 800px;
-  width: 90%;
-}
-
-.checklist-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.checklist-table th,
-.checklist-table td {
-  padding: 12px 16px; /* Consistent padding for even spacing */
-  text-align: center; /* Center-align content for consistency */
-  border-bottom: 1px solid #ddd;
-}
-
-.checklist-table th {
-  background-color: #f8f9fa;
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-.checklist-table td {
-  background-color: white;
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Vertically center content */
-  justify-content: center; /* Horizontally center content */
-}
-
-.checklist-table input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #253D90;
-  cursor: pointer;
-  margin: 0; /* Remove default margin for precise control */
-  margin-right: 8px; /* Add spacing between checkbox and any text (if added) */
-}
-
-.save-button {
-  background-color: #ff0000; /* Bright red for Save button */
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  display: block;
-  margin: 15px auto 0;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3); /* Red shadow to match */
-  max-width: 125px;
-  width: 100%;
-}
-
-.save-button:hover {
-  background-color: #cc0000; /* Darker red for hover state */
-  transform: translateY(-1px);
-}
-
-/* Personnel Information Styles */
+/* Personnel Header (Search and Add Button) */
 .personnel-header {
   display: flex;
   justify-content: space-between;
@@ -188,7 +120,7 @@
   padding: 8px 12px;
   font-size: 16px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 20px; /* Rounded corners as in the image */
   width: 300px;
   outline: none;
 }
@@ -198,7 +130,7 @@
   color: white;
   border: none;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: 20px; /* Rounded button as in the image */
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -211,25 +143,40 @@
   transform: translateY(-1px);
 }
 
+/* Personnel List */
 .personnel-list {
-  background-color: #d9d9d9;
-  padding: 15px;
-  border-radius: 6px;
   max-width: 800px;
   width: 90%;
   margin: 0 auto;
 }
 
-.personnel-item {
+.category-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 15px 0 5px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.personnel-category {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px;
-  background-color: white;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.personnel-item {
+  background-color: #d9d9d9; /* Gray background for items */
+  padding: 10px 20px;
+  border-radius: 20px; /* Rounded corners as in the image */
+  text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  flex: 0 0 calc(50% - 10px); /* Fixed width: Two items per row */
+  height: 40px; /* Fixed height for uniformity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .personnel-item:hover {
@@ -238,31 +185,12 @@
 }
 
 .personnel-item span {
-  flex: 1;
   font-size: 16px;
   color: #333;
   font-weight: 500;
+  white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.more-button {
-  background-color: #ff0000; /* Red for more button */
-  color: white;
-  border: none;
-  padding: 4px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  box-shadow: 0 2px 4px rgba(255, 0, 0, 0.3);
-}
-
-.more-button:hover {
-  background-color: #cc0000; /* Darker red for hover state */
-  transform: translateY(-1px);
+  text-overflow: ellipsis; /* Add ellipsis for long names */
 }
 
 /* Responsive Design */
@@ -301,45 +229,8 @@
   }
 
   .personnel-item {
-    flex-direction: column;
-    text-align: center;
+    flex: 0 0 100%; /* One item per row on mobile */
     padding: 10px;
-  }
-
-  .personnel-item span {
-    margin-bottom: 5px;
-    flex: none;
-  }
-
-  .more-button {
-    width: 100%;
-    padding: 6px 12px;
-    font-size: 14px;
-  }
-
-  .checklist-table {
-    max-width: 100%;
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .checklist-table table {
-    font-size: 14px;
-  }
-
-  .checklist-table th,
-  .checklist-table td {
-    padding: 8px 12px; /* Reduced padding for mobile */
-    text-align: center;
-  }
-
-  .checklist-table input[type="checkbox"] {
-    margin-right: 6px; /* Reduced spacing for mobile */
-  }
-
-  .save-button {
-    width: 80%;
-    font-size: 14px;
-    padding: 8px 16px;
+    height: 40px; /* Maintain fixed height on mobile */
   }
 }

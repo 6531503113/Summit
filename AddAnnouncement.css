@@ -1,12 +1,14 @@
-.sidebar h2 {
-  color: #ffffff;
-  margin-top: 120px; /* เพิ่มระยะห่างจากโลโก้ */
+.recruitment-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Sidebar */
 .sidebar {
   width: 250px;
-  background: #253D90;
-  color: rgb(203, 203, 203);
+  background: #253D90; /* Dark blue from image */
+  color: #FFFFFF; /* White text */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -14,40 +16,56 @@
   position: fixed;
   left: 0;
   top: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar h4 {
-  font-size: 12px;
+.logo {
+  background: url('./assets/logo.png') no-repeat center center/contain;
+  height: 60px;
+  margin-bottom: 10px;
 }
 
-.main-content {
-  margin-left: 250px;
-  padding: 20px;
-  background: #f5f7fa; /* Light blue background like in the image */
+.sidebar-title {
+  color: #FFFFFF; /* White */
+  margin-top: 10px; /* Adjust to match image */
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
 }
 
-.sidebar ul {
+.sidebar-menu {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
-.sidebar ul li {
-  padding: 10px;
+.sidebar-menu li {
+  padding: 10px 0;
 }
 
-.sidebar ul li a {
-  color: white;
+.sidebar-menu li a {
+  color: #FFFFFF; /* White */
   text-decoration: none;
   display: block;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.sidebar ul li a:hover {
-  background: #9fb6cb;
-  padding: 10px;
-  border-radius: 5px;
+.sidebar-menu li a:hover {
+  background: #E3F2FD; /* Light blue hover */
+  color: #000000; /* Black */
 }
 
-/* Log Out อยู่ล่างสุด */
+.sidebar-subheader {
+  font-size: 12px;
+  font-weight: 600;
+  color: #B0BEC5; /* Gray */
+  margin: 15px 0 5px 15px;
+  text-transform: uppercase; /* Match image */
+}
+
 .logout-container {
   margin-top: auto;
   padding-top: 20px;
@@ -56,36 +74,78 @@
 .logout-button {
   width: 100%;
   padding: 10px;
-  background: #ff3a08;
-  color: white;
+  background: #FF0000; /* Red */
+  color: #FFFFFF; /* White */
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 20px; /* Circular like in image */
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .logout-button:hover {
-  background: #e63206;
+  background: #CC0000; /* Darker red */
 }
 
-.logo {
-  background: url('./assets/logo.png') no-repeat center center/contain;
-  height: 100px;
-  padding-bottom: 0;
-  position: absolute;
-  left: 20px;
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  background: #E3F2FD; /* Light blue background */
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.header {
+  background: #FFFFFF; /* White */
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #253D90; /* Dark blue */
   margin: 0;
-  top: 20px;
 }
 
-.home-container h2 {
-  color: #ffffff;
-  margin-top: 125px; /* เว้นระยะจาก logo */
+.announcement-categories {
+  margin-bottom: 20px;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.category-tab {
+  background: #E3F2FD; /* Light blue */
+  border: 1px solid #B0BEC5; /* Gray border */
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000; /* Black */
+}
+
+.category-tab.active {
+  background: #253D90; /* Dark blue */
+  border-color: #253D90;
+  color: #FFFFFF; /* White */
+}
+
+.category-tab:hover {
+  background: #B0BEC5; /* Gray */
 }
 
 .announcement-box {
-  background: white;
+  background: #FFFFFF; /* White */
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #B0BEC5; /* Gray border */
+  border-radius: 8px;
   position: relative;
   height: 85vh;
   display: flex;
@@ -96,115 +156,127 @@
 
 .job-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-  gap: 20px; /* Spacing between cards */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   list-style: none;
   padding: 0;
   width: 100%;
-  max-width: 1200px; /* Limit the width of the grid */
+  max-width: 1200px;
 }
 
 .job-item {
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 8px; /* Rounded corners like in the image */
+  background: #FFFFFF; /* White */
+  border: 1px solid #B0BEC5; /* Gray border */
+  border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: slight shadow for depth */
-  width: 100%; /* Ensure cards fit within grid */
-  max-width: 350px; /* Match the card width in the image */
-  height: auto; /* Allow height to adjust to content */
-  margin: 0 auto; /* Center cards within grid cells */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .job-item h3 {
-  color: #253D90; /* Match the dark blue title color from the image */
+  color: #000000; /* Black */
   font-size: 18px;
   margin-top: 0;
-  margin-bottom: 10px; /* Space below title */
+  margin-bottom: 10px;
 }
 
 .job-details {
-  margin-bottom: 15px; /* Space before actions */
+  margin-bottom: 15px;
 }
 
 .job-details p {
   margin: 5px 0;
   font-size: 14px;
-  color: #333;
-  line-height: 1.5; /* Improve readability */
+  color: #000000; /* Black */
+  line-height: 1.5;
 }
 
 .job-details strong {
-  color: #253D90; /* Match title color for labels */
+  color: #000000; /* Black */
 }
 
 .job-actions {
   display: flex;
-  gap: 10px; /* Space between buttons */
-  margin-top: 15px; /* Space above buttons */
+  gap: 10px;
+  margin-top: 15px;
 }
 
 .edit-button {
-  background: #ff0000; /* Red button like in the image */
-  color: white;
+  background: #FF0000; /* Red */
+  color: #FFFFFF; /* White */
   border: none;
   padding: 8px 15px;
-  border-radius: 5px;
+  border-radius: 20px; /* Circular like in image */
   cursor: pointer;
   margin-right: 10px;
 }
 
 .edit-button:hover {
-  background: #e63206;
+  background: #CC0000; /* Darker red */
 }
 
 .delete-button {
-  background: #ff0000; /* Red button like in the image for consistency */
-  color: white;
+  background: #FF0000; /* Red */
+  color: #FFFFFF; /* White */
   border: none;
   padding: 8px 15px;
-  border-radius: 5px;
+  border-radius: 20px; /* Circular like in image */
   cursor: pointer;
 }
 
 .delete-button:hover {
-  background: #e63206;
+  background: #CC0000; /* Darker red */
 }
 
 .add-button {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  padding: 10px 20px;
-  background: #ff0000;
-  color: white;
+  padding: 10px;
+  background: #FF0000; /* Red */
+  color: #FFFFFF; /* White */
   border: none;
-  border-radius: 5px;
+  border-radius: 50%; /* Circular like in image */
+  width: 40px;
+  height: 40px;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add-button:hover {
-  background: #ff0000;
+  background: #CC0000; /* Darker red */
 }
 
 .no-announcement {
   font-size: 30px;
-  color: #777;
-  margin-bottom: 20px; /* เพิ่มระยะห่างจากข้อความไปปุ่ม Add */
+  color: #B0BEC5; /* Gray */
+  margin-bottom: 20px;
 }
 
-/* Ensure 2 rows by limiting the number of items displayed or adjusting grid if needed */
 @media (max-width: 1200px) {
   .job-list {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on smaller screens */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 800px) {
   .job-list {
-    grid-template-columns: 1fr; /* 1 card per row on very small screens */
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    width: 200px;
+  }
+  .main-content {
+    margin-left: 200px;
   }
 }

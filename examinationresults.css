@@ -1,176 +1,230 @@
+/* General container styling */
 .recruitment-container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: #f5f7fa; /* Light gray-blue background for a clean look */
+  font-family: 'Roboto', sans-serif; /* Professional font */
 }
 
+/* Sidebar */
 .sidebar {
   width: 250px;
-  background-color: #253D90;
-  color: white;
+  background: #253d90;
+  color: #ffffff;
   padding: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar h2 {
-  text-align: center;
+  color: #ffffff;
+  margin-top: 120px;
   font-size: 24px;
-  margin-bottom: 20px;
   font-weight: 600;
+  text-align: center;
+}
+
+.sidebar h4 {
+  font-size: 14px;
+  color: #d3d3d3;
+  margin-top: 20px;
+  text-transform: uppercase;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
 .sidebar ul li {
-  padding: 12px 0;
+  padding: 10px 15px;
 }
 
 .sidebar ul li a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  display: block;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
+.sidebar ul li a:hover,
 .sidebar ul li a.active {
-  background-color: #253D90;
-  border-radius: 4px;
-  padding-left: 10px;
-}
-
-.sidebar ul li a:hover {
-  background-color: #ffffff;
-  border-radius: 4px;
-  padding-left: 10px;
-  transition: 0.3s ease-in-out;
+  background: #344e9e;
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
 .logout-container {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .logout-button {
-  background-color: red;
-  color: white;
-  padding: 12px 20px;
+  width: 100%;
+  padding: 12px;
+  background: #ff4d4d;
+  color: #ffffff;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
   font-size: 16px;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 .logout-button:hover {
-  background-color: #c0392b;
+  background: #e63939;
 }
 
-/* Main Content */
+/* Logo styling */
+.logo {
+  background: url("./assets/logo.png") no-repeat center center/contain;
+  height: 100px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+/* Main content */
 .main-content {
-  flex: 1;
+  margin-left: 250px;
   padding: 30px;
-  background-color: #ecf0f1;
-  overflow-y: auto;
-}
-
-.header {
-  background-color: white;
-  padding: 15px 25px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  flex: 1;
+  min-height: 100vh;
 }
 
 .header h1 {
   font-size: 28px;
-  font-weight: 600;
-  color: #2c3e50;
+  color: #253d90; /* Dark blue for a formal look */
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-/* Applicants List */
-.applicants-list {
-  background-color: #d9d9d9;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.applicant {
+/* Results table container */
+.results-table-container {
+  background: #ffffff; /* White background for a clean look */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin: 10px 0;
-  padding: 10px;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px; /* Wider to accommodate inputs */
+  margin: 0 auto;
 }
 
-.applicant input[type="checkbox"] {
-  margin-right: 10px;
+/* Table styling */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  border: 1px solid #e0e0e0;
 }
 
-.applicant label {
-  flex-grow: 1;
+.results-table th,
+.results-table td {
+  padding: 12px 15px;
+  text-align: left;
   font-size: 16px;
-  color: #333;
+  color: #333333;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.portfolio-button {
-  background-color: #2c3e50;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-}
-
-.portfolio-button:hover {
-  background-color: #34495e;
-}
-
-.submit-button {
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
+.results-table th {
+  background: #253d90; /* Dark blue header background */
+  color: #ffffff;
   font-weight: 600;
-  display: block;
-  margin: 20px auto;
-  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+
+.results-table td {
+  background: #ffffff;
+}
+
+.results-table tr:nth-child(even) td {
+  background: #f9f9f9; /* Slight gray for alternating rows */
+}
+
+/* Input styling */
+.score-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333333;
+  background-color: #fafafa;
+  text-align: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.score-input:focus {
+  outline: none;
+  border-color: #253d90;
+  box-shadow: 0 0 5px rgba(37, 61, 144, 0.2);
+}
+
+/* Submit button */
+.submit-button {
+  background: #253d90; /* Dark blue to match the formal theme */
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .submit-button:hover {
-  background-color: #c0392b;
+  background: #344e9e;
+}
+
+.submit-button:active {
+  transform: scale(0.98);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .sidebar {
     width: 200px;
-    padding: 15px;
   }
 
   .main-content {
+    margin-left: 200px;
     padding: 15px;
   }
 
-  .applicant {
-    flex-direction: column;
-    text-align: center;
+  .results-table-container {
+    padding: 15px;
+    max-width: 100%;
   }
 
-  .portfolio-button {
-    margin: 10px 0 0;
-    width: 100%;
+  .results-table th,
+  .results-table td {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .score-input {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+    padding: 10px 20px;
   }
 }

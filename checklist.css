@@ -1,272 +1,242 @@
+/* General container styling */
 .recruitment-container {
   display: flex;
-  height: 100vh;
-  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background-color: #f5f7fa; /* Light gray-blue background for a clean look */
+  font-family: 'Roboto', sans-serif; /* Professional font */
 }
 
+/* Sidebar */
 .sidebar {
   width: 250px;
-  background-color: #253D90;
-  color: white;
-  padding: 15px;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-  height: 50px;
-  margin-bottom: 15px;
-  background-color: #253D90;
-  border-radius: 4px;
-}
-
-.sidebar-title {
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 15px;
-  font-weight: 600;
+  background: #253d90;
   color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar-menu {
+.sidebar h2 {
+  color: #ffffff;
+  margin-top: 120px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sidebar h4 {
+  font-size: 14px;
+  color: #d3d3d3;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 20px;
 }
 
-.sidebar-subheader {
-  font-size: 14px;
-  font-weight: 600;
-  color: #a9b7d0;
-  margin: 10px 0 8px;
-  padding-left: 8px;
+.sidebar ul li {
+  padding: 10px 15px;
 }
 
-.sidebar-link {
-  color: white;
+.sidebar ul li a {
+  color: #ffffff;
   text-decoration: none;
+  display: block;
   font-size: 16px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
-.sidebar-link.active {
-  background-color: #34495e;
-  font-weight: 600;
-}
-
-.sidebar-link:hover {
-  background-color: #34495e;
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: #344e9e;
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
 .logout-container {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .logout-button {
-  background-color: #e74c3c;
-  color: white;
-  padding: 10px 18px;
+  width: 100%;
+  padding: 12px;
+  background: #ff4d4d;
+  color: #ffffff;
   border: none;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 .logout-button:hover {
-  background-color: #c0392b;
-  transform: translateY(-1px);
+  background: #e63939;
 }
 
-/* Main Content */
-.main-content {
-  flex: 1;
-  padding: 20px;
-  background-color: #ecf0f1;
-  overflow-y: auto;
-  position: relative; /* เพิ่มเพื่อจัดการการวางซ้อน */
-  background-size: cover;
-  background-position: right bottom; /* จัดตำแหน่งภาพให้อยู่ขวาล่างเหมือนในภาพ */
-  background-repeat: no-repeat;
-  opacity: 0.8; /* ปรับความโปร่งใสให้เหมือนภาพ */
-}
-
-/* ซ่อนพื้นหลังของ .main-content เพื่อให้เห็นเฉพาะเนื้อหาและภาพพื้นหลัง */
-.main-content::before {
-  content: '';
+/* Logo styling */
+.logo {
+  background: url("./assets/logo.png") no-repeat center center/contain;
+  height: 100px;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit; /* สืบทอดพื้นหลังจาก .main-content */
-  opacity: 0.8; /* ความโปร่งใสเหมือนภาพ */
-  z-index: 0; /* อยู่ด้านหลังเนื้อหา */
+  left: 20px;
+  top: 20px;
 }
 
-/* ทำให้ตารางและปุ่มอยู่เหนือภาพพื้นหลัง */
-.main-content > * {
-  position: relative;
-  z-index: 1; /* อยู่เหนือภาพพื้นหลัง */
+/* Main content */
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  flex: 1;
+  min-height: 100vh;
 }
 
 .header {
-  background-color: white;
-  padding: 15px 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .header-title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #2c3e50;
-  margin: 0;
+  font-size: 28px;
+  color: #253d90; /* Dark blue for a formal look */
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-/* Checklist Section and Rows */
+/* Checklist Section */
 .checklist-section {
-  background-color: #d9d9d9;
-  padding: 15px;
-  border-radius: 6px;
-  margin: 10px auto;
-  max-width: 800px;
-  width: 90%;
-  position: relative; /* ช่วยในการจัดวาง */
-  z-index: 1; /* อยู่เหนือภาพพื้นหลัง */
+  background: #ffffff; /* White background for a clean look */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 800px; /* Wider to accommodate the table */
+  margin: 0 auto;
 }
 
-.checklist-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
+/* Checklist Table */
+.checklist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  border: 1px solid #e0e0e0;
 }
 
-.name-label {
-  font-weight: 600;
-  color: #2c3e50;
-  min-width: 200px; /* Ensure name has enough space */
+.checklist-table th,
+.checklist-table td {
+  padding: 12px 15px;
   text-align: left;
+  font-size: 16px;
+  color: #333333;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.checkbox-group {
-  display: flex;
-  gap: 20px; /* Space between checkboxes */
-  justify-content: center; /* Center the group horizontally */
-  align-items: center; /* Center vertically */
-  flex-grow: 1; /* Allow the group to take available space */
+.checklist-table th {
+  background: #253d90; /* Dark blue header background */
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.checkbox-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center checkbox and label vertically */
-  gap: 5px; /* Space between checkbox and label */
+.checklist-table td {
+  background: #ffffff;
+  text-align: center; /* Center checkboxes */
 }
 
-.checkbox-container input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #253D90;
+.checklist-table tr:nth-child(even) td {
+  background: #f9f9f9; /* Slight gray for alternating rows */
+}
+
+/* Checkbox styling */
+.checklist-input {
+  width: 18px;
+  height: 18px;
+  accent-color: #253d90; /* Match the theme */
   cursor: pointer;
-  margin: 0; /* Remove default margin */
 }
 
-.checkbox-container span {
-  font-size: 14px;
-  color: #333;
-  white-space: nowrap; /* Prevent label text from wrapping */
+/* No applicants message */
+.no-applicants {
+  font-size: 18px;
+  color: #777777;
+  text-align: center;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
 }
 
+/* Save button */
 .save-button {
-  background-color: #ff0000;
-  color: white;
+  background: #253d90; /* Dark blue to match the formal theme */
+  color: #ffffff;
   border: none;
-  padding: 10px 18px;
-  border-radius: 4px;
+  padding: 12px 30px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
+  text-transform: uppercase;
   display: block;
-  margin: 15px auto 0;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-  box-shadow: 0 2px 6px rgba(255, 0, 0, 0.3);
-  max-width: 125px;
-  width: 100%;
-  position: relative; /* ช่วยในการจัดวาง */
-  z-index: 1; /* อยู่เหนือภาพพื้นหลัง */
+  margin: 0 auto;
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .save-button:hover {
-  background-color: #cc0000;
-  transform: translateY(-1px);
+  background: #344e9e;
+}
+
+.save-button:active {
+  transform: scale(0.98);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .sidebar {
-    width: 180px;
-    padding: 10px;
+    width: 200px;
   }
 
   .main-content {
+    margin-left: 200px;
     padding: 15px;
   }
 
   .header-title {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .checklist-section {
+    padding: 15px;
     max-width: 100%;
-    width: 100%;
-    margin: 10px 0;
   }
 
-  .checklist-row {
-    padding: 8px 12px;
-    flex-direction: column; /* Stack on small screens */
-    align-items: flex-start;
+  .checklist-table th,
+  .checklist-table td {
+    font-size: 14px;
+    padding: 8px 10px;
   }
 
-  .name-label {
-    min-width: auto; /* Reset width on small screens */
-    margin-bottom: 10px;
+  .checklist-input {
+    width: 16px;
+    height: 16px;
   }
 
-  .checkbox-group {
-    flex-direction: row; /* Keep checkboxes in a row */
-    gap: 10px; /* Reduce gap on small screens */
-    width: 100%;
-    justify-content: space-around; /* Distribute evenly on small screens */
-  }
-
-  .checkbox-container {
-    flex-direction: row; /* Align checkbox and label horizontally on small screens */
-    gap: 5px;
-  }
-
-  .checkbox-container span {
-    font-size: 12px;
+  .no-applicants {
+    font-size: 16px;
+    padding: 15px;
   }
 
   .save-button {
-    width: 80%;
     font-size: 14px;
-    padding: 8px 16px;
+    padding: 10px 20px;
   }
 }

@@ -7,12 +7,17 @@ function AddAnnouncement() {
   const navigate = useNavigate();
   
   const [jobs, setJobs] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("Employees");
 
   const fetchJobs = () => {
     axios
-      .get("http://localhost:3307/jobs") 
+      .get("http://localhost:3307/jobs")
       .then((response) => {
-        setJobs(response.data); 
+        const jobsWithCategory = response.data.map((job, index) => ({
+          ...job,
+          category: index % 2 === 0 ? "Employees" : "Internships",
+        }));
+        setJobs(jobsWithCategory);
       })
       .catch((error) => {
         console.error("Error fetching jobs:", error);
@@ -20,15 +25,15 @@ function AddAnnouncement() {
   };
 
   useEffect(() => {
-    fetchJobs(); 
-  }, []); 
+    fetchJobs();
+  }, []);
 
   const handleDelete = (jobId) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this job?");
     
     if (confirmDelete) {
       axios
-        .delete(`http://localhost:3307/delete-job/${jobId}`) 
+        .delete(`http://localhost:3307/delete-job/${jobId}`)
         .then((response) => {
           setJobs(jobs.filter((job) => job.id !== jobId));
         })
@@ -40,16 +45,22 @@ function AddAnnouncement() {
   };
 
   const handleLogout = () => {
-    navigate("/"); 
+    navigate("/");
   };
 
   const handleAdd = () => {
-    navigate("/addjob"); 
+    navigate("/addjob");
   };
 
   const handleEdit = (jobId) => {
-    navigate(`/editjob/${jobId}`); 
+    navigate(`/editjob/${jobId}`);
   };
+
+  const handleViewMore = (jobId) => {
+    navigate(`/moreannouncement/${jobId}`);
+  };
+
+  const filteredJobs = jobs.filter(job => job.category === selectedCategory);
 
   return (
     <div className="recruitment-container">
@@ -74,11 +85,33 @@ function AddAnnouncement() {
           <h1>Recruiting employees</h1>
         </header>
         
+        <div className="announcement-categories">
+          <div className="category-tabs">
+            <button
+              className={`category-tab ${selectedCategory === "Employees" ? "active" : ""}`}
+              onClick={() => setSelectedCategory("Employees")}
+            >
+              Employees
+            </button>
+            <button
+              className={`category-tab ${selectedCategory === "Internships" ? "active" : ""}`}
+              onClick={() => setSelectedCategory("Internships")}
+            >
+              Internships
+            </button>
+          </div>
+        </div>
+        
         <div className="announcement-box">
-          {jobs.length > 0 ? (
+          {filteredJobs.length > 0 ? (
             <ul className="job-list">
-              {jobs.map((job) => (
-                <li key={job.id} className="job-item">
+              {filteredJobs.map((job) => (
+                <li 
+                  key={job.id} 
+                  className="job-item"
+                  onClick={() => handleViewMore(job.id)}
+                  style={{ cursor: 'pointer' }}
+                >
                   <h3>{job.title}</h3>
                   <div className="job-details">
                     <p><strong>Job description:</strong> {job.description}</p>
@@ -87,8 +120,24 @@ function AddAnnouncement() {
                     <p><strong>Application accepted until:</strong> {new Date(job.deadline).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                   </div>
                   <div className="job-actions">
-                    <button className="edit-button" onClick={() => handleEdit(job.id)}>Edit</button>
-                    <button className="delete-button" onClick={() => handleDelete(job.id)}>Delete</button>
+                    <button
+                      className="edit-button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleEdit(job.id);
+                      }}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="delete-button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDelete(job.id);
+                      }}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </li>
               ))}

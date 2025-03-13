@@ -69,7 +69,7 @@ function EmployeeProfile() {
         <ul className="sidebar-menu">
           <li>
             <Link to="/profile" className="sidebar-link active">
-              <i className="fas fa-user"></i>Personal Information
+            Personal Information
             </Link>
           </li>
         </ul>

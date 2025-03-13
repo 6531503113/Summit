@@ -108,16 +108,41 @@
 }
 
 /* Announcement Categories */
-.announcement-categories h4 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #2c3e50;
+.announcement-categories {
     margin-bottom: 30px;
+    text-align: center;
 }
 
-.category {
-    margin-right: 10px;
-    display: inline-block;
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.category-tab {
+    background-color: #ffffff;
+    color: #2c3e50;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-tab:hover {
+    background-color: #253D90;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-tab.active {
+    background-color: #253D90;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 61, 144, 0.3);
 }
 
 /* Job Status Section */
@@ -136,7 +161,7 @@
 
 .job-card {
     background-color: #ffffff;
-    padding: 80px;
+    padding: 20px; /* Reduced padding to fit new field */
     width: 100%;
     max-width: 380px;
     height: auto;
@@ -165,7 +190,8 @@
 
 .job-description1,
 .job-description2,
-.job-description3 {
+.job-description3,
+.job-description4 {
     font-size: 14px;
     color: #7f8c8d;
     margin: 8px 0;
