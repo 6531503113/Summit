@@ -63,38 +63,38 @@ function AddAnnouncement() {
   const filteredJobs = jobs.filter(job => job.category === selectedCategory);
 
   return (
-    <div className="recruitment-container">
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2 className="sidebar-title">Admin</h2>
-        <ul className="sidebar-menu">
-          <li><Link to="/personnelinformation" className="sidebar-link">Personal Information</Link></li>
-          <li><Link to="/addAnnouncement" className="sidebar-link">Announcement</Link></li>
-          <h4 className="sidebar-subheader">Recruitment</h4>
-          <li><Link to="/jobs" className="sidebar-link">Jobs</Link></li>
-          <li><Link to="/examinationresults" className="sidebar-link">Examination Results</Link></li>
-          <li><Link to="/checklist" className="sidebar-link">Check List</Link></li>
+    <div className="addannouncement-container">
+      <aside className="addannouncement-sidebar">
+        <div className="addannouncement-logo"></div>
+        <h2 className="addannouncement-sidebar-title">Admin</h2>
+        <ul className="addannouncement-sidebar-menu">
+          <li><Link to="/personnelinformation" className="addannouncement-sidebar-link">Personnel Information</Link></li>
+          <li><Link to="/addAnnouncement" className="addannouncement-sidebar-link">Announcement</Link></li>
+          <h4 className="addannouncement-sidebar-subheader">Recruitment</h4>
+          <li><Link to="/jobs" className="addannouncement-sidebar-link">Jobs</Link></li>
+          <li><Link to="/examinationresults" className="addannouncement-sidebar-link">Examination Results</Link></li>
+          <li><Link to="/checklist" className="addannouncement-sidebar-link">Check List</Link></li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={handleLogout}>Log Out</button>
+        <div className="addannouncement-logout-container">
+          <button className="addannouncement-logout-button" onClick={handleLogout}>Log Out</button>
         </div>
       </aside>
 
-      <div className="main-content">
-        <header className="header">
-          <h1>Recruiting employees</h1>
+      <div className="addannouncement-main-content">
+        <header className="addannouncement-header">
+          <h1 className="addannouncement-header-title">Recruiting employees</h1>
         </header>
         
-        <div className="announcement-categories">
-          <div className="category-tabs">
+        <div className="addannouncement-categories">
+          <div className="addannouncement-category-tabs">
             <button
-              className={`category-tab ${selectedCategory === "Employees" ? "active" : ""}`}
+              className={`addannouncement-category-tab ${selectedCategory === "Employees" ? "active" : ""}`}
               onClick={() => setSelectedCategory("Employees")}
             >
               Employees
             </button>
             <button
-              className={`category-tab ${selectedCategory === "Internships" ? "active" : ""}`}
+              className={`addannouncement-category-tab ${selectedCategory === "Internships" ? "active" : ""}`}
               onClick={() => setSelectedCategory("Internships")}
             >
               Internships
@@ -102,26 +102,26 @@ function AddAnnouncement() {
           </div>
         </div>
         
-        <div className="announcement-box">
+        <div className="addannouncement-box">
           {filteredJobs.length > 0 ? (
-            <ul className="job-list">
+            <ul className="addannouncement-job-list">
               {filteredJobs.map((job) => (
                 <li 
                   key={job.id} 
-                  className="job-item"
+                  className="addannouncement-job-item"
                   onClick={() => handleViewMore(job.id)}
                   style={{ cursor: 'pointer' }}
                 >
                   <h3>{job.title}</h3>
-                  <div className="job-details">
+                  <div className="addannouncement-job-details">
                     <p><strong>Job description:</strong> {job.description}</p>
                     <p><strong>Location:</strong> {job.location}</p>
                     <p><strong>Number accepted:</strong> {job.num_accepted}</p>
                     <p><strong>Application accepted until:</strong> {new Date(job.deadline).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                   </div>
-                  <div className="job-actions">
+                  <div className="addannouncement-job-actions">
                     <button
-                      className="edit-button"
+                      className="addannouncement-edit-button"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleEdit(job.id);
@@ -130,7 +130,7 @@ function AddAnnouncement() {
                       Edit
                     </button>
                     <button
-                      className="delete-button"
+                      className="addannouncement-delete-button"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleDelete(job.id);
@@ -143,9 +143,9 @@ function AddAnnouncement() {
               ))}
             </ul>
           ) : (
-            <div className="no-announcement">No announcements available</div>
+            <div className="addannouncement-no-announcement">No announcements available</div>
           )}
-          <button className="add-button" onClick={handleAdd}>Add</button>
+          <button className="addannouncement-add-button" onClick={handleAdd}>Add</button>
         </div>
       </div>
     </div>
