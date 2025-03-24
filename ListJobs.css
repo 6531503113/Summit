@@ -1,205 +1,265 @@
-.recruitment-container {
-    display: flex;
-    height: 100vh;
-    font-family: 'Poppins', sans-serif; /* เพิ่มฟอนต์เพื่อความเป็นมืออาชีพ */
+/* โครงสร้างหลัก */
+.listjobs-container {
+  display: flex;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+/* Sidebar - เหมือน PersonnelInformation.css */
+.listjobs-sidebar {
+  width: 250px;
+  background-color: #E3F2FD !important;
+  color: #000000;
+  padding: 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.listjobs-logo {
+  height: 50px;
+  margin-bottom: 15px;
+  background: url("./assets/logo.png") no-repeat center center/contain;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listjobs-sidebar-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #000000 !important;
+}
+
+.listjobs-sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.listjobs-sidebar-menu li {
+  padding: 12px 0;
+}
+
+.listjobs-sidebar-link {
+  color: #000000 !important;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.listjobs-sidebar-link:hover {
+  background-color: #E0E0E0 !important;
+  padding-left: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.listjobs-sidebar-link.active {
+  background-color: #34c759;
+  font-weight: 600;
+}
+
+.listjobs-sidebar-subheader {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000 !important;
+  margin: 15px 0 10px 0;
+  padding-left: 12px;
+  text-align: left;
+}
+
+.listjobs-logout-container {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #D3D3D3;
+}
+
+.listjobs-logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.listjobs-logout-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* Main Content */
+.listjobs-main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #f7f8fa;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listjobs-header {
+  background-color: transparent;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 1000px;
+  border-bottom: 2px solid #2c3e50;
+}
+
+.listjobs-header-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+/* Applicants List */
+.listjobs-applicants-list {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d1d5db;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+.listjobs-applicant {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.listjobs-applicant:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.listjobs-applicant input[type="checkbox"] {
+  margin-right: 15px;
+  width: 18px;
+  height: 18px;
+  accent-color: #ff0000; /* เปลี่ยนให้เข้ากับสีหลัก */
+}
+
+.listjobs-applicant-label {
+  flex-grow: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.listjobs-portfolio-button {
+  background-color: #4b5563;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 15px;
+  transition: background-color 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.listjobs-portfolio-button:hover {
+  background-color: #6b7280;
+}
+
+/* Submit Button */
+.listjobs-submit-button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.listjobs-submit-button:hover {
+  background-color: #cc0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .listjobs-sidebar {
+    width: 180px;
+    padding: 10px;
   }
-  
-  /* Sidebar */
-  .sidebar {
-    width: 250px;
-    background-color: #1e3a8a; /* เปลี่ยนเป็นน้ำเงินเข้ม */
-    color: white;
-    padding: 20px;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+
+  .listjobs-main-content {
+    padding: 25px;
   }
-  
-  .sidebar-title {
-    text-align: center;
-    font-size: 22px;
-    font-weight: 600;
-    margin-top: 120px;
+
+  .listjobs-header {
+    padding: 15px 0;
     margin-bottom: 20px;
   }
-  
-  .sidebar-menu {
-    list-style: none;
-    padding: 0;
+
+  .listjobs-header-title {
+    font-size: 26px;
   }
-  
-  .sidebar-menu li {
-    padding: 12px 0;
-  }
-  
-  .sidebar-menu li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-  }
-  
-  .sidebar-menu li a:hover {
-    background-color: #3b82f6; /* สีน้ำเงินสว่างเมื่อ hover */
-  }
-  
-  .sidebar-subheader {
-    font-size: 14px;
-    font-weight: 600;
-    color: #bfdbfe; /* สีน้ำเงินอ่อนสำหรับ subheader */
-    margin: 20px 0 10px;
-  }
-  
-  .logout-container {
-    margin-top: auto;
-    padding-top: 20px;
-    text-align: center;
-  }
-  
-  .logout-button {
-    background-color: #dc2626; /* สีแดงเข้ม */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: background 0.3s ease;
-  }
-  
-  .logout-button:hover {
-    background-color: #b91c1c; /* สีแดงเข้มขึ้นเมื่อ hover */
-  }
-  
-  /* Main Content */
-  .main-content {
-    flex: 1;
-    padding: 30px;
-    background-color: #f9fafb; /* สีเทาอ่อนมากเพื่อความสะอาดตา */
-    overflow-y: auto;
-  }
-  
-  .header {
-    background-color: #ffffff;
-    padding: 20px 25px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    margin-bottom: 24px;
-    border-radius: 4px; /* ลดความโค้ง */
-  }
-  
-  .header h1 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #1f2937; /* สีเทาเข้มเพื่อความเป็นทางการ */
-    margin: 0;
-  }
-  
-  /* Applicants List */
-  .applicants-list {
-    background-color: #ffffff; /* เปลี่ยนจากเทาเป็นขาว */
+
+  .listjobs-applicants-list {
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    margin: 0 0 24px;
+    margin-bottom: 20px;
   }
-  
-  .applicant {
-    display: flex;
-    align-items: center;
-    margin: 12px 0;
-    padding: 12px 16px;
-    background-color: #fafafa; /* สีเทาอ่อนมากสำหรับแต่ละรายการ */
-    border: 1px solid #e5e7eb; /* เส้นขอบสีเทาอ่อน */
-    border-radius: 4px; /* ลดความโค้ง */
-    transition: background 0.2s ease;
+
+  .listjobs-applicant {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 15px;
+    margin: 10px 0;
   }
-  
-  .applicant:hover {
-    background-color: #f1f5f9; /* สีเทาอ่อนเมื่อ hover */
+
+  .listjobs-applicant-label {
+    margin: 10px 0;
   }
-  
-  .applicant input[type="checkbox"] {
-    margin-right: 12px;
-    width: 16px;
-    height: 16px;
-    accent-color: #1e3a8a; /* สีน้ำเงินเข้มสำหรับ checkbox */
+
+  .listjobs-portfolio-button {
+    margin: 10px 0 0;
+    width: 100%;
+    padding: 10px;
   }
-  
-  .applicant-label {
-    flex-grow: 1;
-    font-size: 14px;
-    font-weight: 400;
-    color: #1f2937; /* สีเทาเข้ม */
+
+  .listjobs-submit-button {
+    width: 100%;
+    padding: 12px;
   }
-  
-  .portfolio-button {
-    background-color: #4b5563; /* สีเทาเข้ม */
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    margin-left: 12px;
-    transition: background 0.3s ease;
-  }
-  
-  .portfolio-button:hover {
-    background-color: #6b7280; /* สีเทาสว่างขึ้นเมื่อ hover */
-  }
-  
-  .submit-button {
-    background-color: #1e3a8a; /* สีน้ำเงินเข้ม */
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    display: block;
-    margin: 0 auto;
-    transition: background 0.3s ease, transform 0.1s ease;
-  }
-  
-  .submit-button:hover {
-    background-color: #1e40af; /* สีน้ำเงินสว่างขึ้นเมื่อ hover */
-    transform: translateY(-1px);
-  }
-  
-  .submit-button:active {
-    transform: translateY(0);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 200px;
-      padding: 15px;
-    }
-  
-    .main-content {
-      padding: 15px;
-    }
-  
-    .applicant {
-      flex-direction: column;
-      text-align: left;
-      padding: 10px;
-    }
-  
-    .applicant-label {
-      margin: 8px 0;
-    }
-  
-    .portfolio-button {
-      margin: 8px 0 0;
-      width: 100%;
-    }
-  }
+}

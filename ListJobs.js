@@ -35,46 +35,70 @@ function ListJobs() {
   };
 
   return (
-    <div className="recruitment-container">
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2 className="sidebar-title">Admin</h2>
-        <ul className="sidebar-menu">
-          <li><Link to="/personnelinformation" className="sidebar-link">Personal Information</Link></li>
-          <li><Link to="/addAnnouncement" className="sidebar-link">Announcement</Link></li>
-          <h4 className="sidebar-subheader">Recruitment</h4>
-          <li><Link to="/jobs" className="sidebar-link">Jobs</Link></li>
-          <li><Link to="/examinationresults" className="sidebar-link">Examination Results</Link></li>
-          <li><Link to="/checklist" className="sidebar-link">Check List</Link></li>
+    <div className="listjobs-container">
+      <aside className="listjobs-sidebar">
+        <div className="listjobs-logo"></div>
+        <h2 className="listjobs-sidebar-title">Admin</h2>
+        <ul className="listjobs-sidebar-menu">
+          <li>
+            <Link to="/personnelinformation" className="listjobs-sidebar-link">
+              Personnel Information
+            </Link>
+          </li>
+          <li>
+            <Link to="/addAnnouncement" className="listjobs-sidebar-link">
+              Announcement
+            </Link>
+          </li>
+          <h4 className="listjobs-sidebar-subheader">Recruitment</h4>
+          <li>
+            <Link to="/jobs" className="listjobs-sidebar-link">
+              Jobs
+            </Link>
+          </li>
+          <li>
+            <Link to="/examinationresults" className="listjobs-sidebar-link">
+              Examination Results
+            </Link>
+          </li>
+          <li>
+            <Link to="/checklist" className="listjobs-sidebar-link">
+              Check List
+            </Link>
+          </li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={handleLogout}>Log Out</button>
+        <div className="listjobs-logout-container">
+          <button className="listjobs-logout-button" onClick={handleLogout}>
+            Log Out
+          </button>
         </div>
       </aside>
 
-      <div className="main-content">
-        <header className="header">
-          <h1>The List of Applicants for Programmer</h1>
+      <div className="listjobs-main-content">
+        <header className="listjobs-header">
+          <h1 className="listjobs-header-title">The List of Applicants for Programmer</h1>
         </header>
 
-        <div className="applicants-list">
+        <div className="listjobs-applicants-list">
           {applicantsList.map((applicant, index) => (
-            <div className="applicant" key={index}>
+            <div className="listjobs-applicant" key={index}>
               <input
                 type="checkbox"
                 name="applicant"
                 id={`applicant${index + 1}`}
                 onChange={(e) => handleCheckboxChange(applicant, e.target.checked)}
               />
-              <label htmlFor={`applicant${index + 1}`} className="applicant-label">
+              <label htmlFor={`applicant${index + 1}`} className="listjobs-applicant-label">
                 {applicant.name} / Age {applicant.age} / {applicant.education} / Experience {applicant.experience}
               </label>
-              <button className="portfolio-button">Portfolio</button>
+              <button className="listjobs-portfolio-button">Portfolio</button>
             </div>
           ))}
         </div>
 
-        <button className="submit-button" onClick={handleSubmit}>Submit</button>
+        <button className="listjobs-submit-button" onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
     </div>
   );

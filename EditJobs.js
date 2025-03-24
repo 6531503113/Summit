@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link, useLocation, useParams } from "react-router-dom";
-import "./EditAnnouncement.css"; // หรือเปลี่ยนชื่อ CSS เป็น EditJobs.css ถ้าต้องการ
+import "./EditJobs.css"; // หรือเปลี่ยนชื่อ CSS เป็น EditJobs.css ถ้าต้องการ
 
 function EditJobs() {
   const navigate = useNavigate();

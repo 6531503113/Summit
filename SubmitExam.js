@@ -6,10 +6,8 @@ function SubmitExam() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get the selected applicants from the navigation state
   const { selectedApplicants = [] } = location.state || {};
 
-  // Initialize state with the selected applicants, adding default values for examDate, interviewDate, and interviewTime
   const [applicants, setApplicants] = useState(
     selectedApplicants.length > 0
       ? selectedApplicants.map((applicant) => ({
@@ -21,7 +19,6 @@ function SubmitExam() {
       : []
   );
 
-  // Handle input changes for each applicant
   const handleInputChange = (index, field, value) => {
     const updatedApplicants = [...applicants];
     updatedApplicants[index] = { ...updatedApplicants[index], [field]: value };
@@ -33,64 +30,59 @@ function SubmitExam() {
   };
 
   const handleSubmit = () => {
-    // You can add logic here to save the data (e.g., send to an API)
     console.log("Submitted Applicants:", applicants);
-    // Navigate to the examination results page after submission
     navigate("/examinationresults");
   };
 
   return (
-    <div className="submit-exam-container">
-      {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2 className="sidebar-title">Admin</h2>
-        <ul className="sidebar-menu">
+    <div className="submitexam-container">
+      <aside className="submitexam-sidebar">
+        <div className="submitexam-logo"></div>
+        <h2 className="submitexam-sidebar-title">Admin</h2>
+        <ul className="submitexam-sidebar-menu">
           <li>
-            <Link to="/personnelinformation" className="sidebar-link">
+            <Link to="/personnelinformation" className="submitexam-sidebar-link">
               Personnel Information
             </Link>
           </li>
           <li>
-            <Link to="/addAnnouncement" className="sidebar-link">
+            <Link to="/addAnnouncement" className="submitexam-sidebar-link">
               Announcement
             </Link>
           </li>
-          <h4 className="sidebar-subheader">Recruitment</h4>
+          <h4 className="submitexam-sidebar-subheader">Recruitment</h4>
           <li>
-            <Link to="/jobs" className="sidebar-link">
+            <Link to="/jobs" className="submitexam-sidebar-link">
               Jobs
             </Link>
           </li>
           <li>
-            <Link to="/examinationresults" className="sidebar-link active">
+            <Link to="/examinationresults" className="submitexam-sidebar-link active">
               Examination Results
             </Link>
           </li>
           <li>
-            <Link to="/checklist" className="sidebar-link">
+            <Link to="/checklist" className="submitexam-sidebar-link">
               Check List
             </Link>
           </li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={handleLogout}>
+        <div className="submitexam-logout-container">
+          <button className="submitexam-logout-button" onClick={handleLogout}>
             Log Out
           </button>
         </div>
       </aside>
 
-      {/* Main Content */}
-      <div className="main-content">
-        <header className="header">
-          <h1>Schedule the Exam Date</h1>
+      <div className="submitexam-main-content">
+        <header className="submitexam-header">
+          <h1 className="submitexam-header-title">Schedule the Exam Date</h1>
         </header>
 
-        {/* Applicants Table */}
-        <div className="exam-schedule-box">
+        <div className="submitexam-exam-schedule-box">
           {applicants.length > 0 ? (
             <>
-              <table className="exam-table">
+              <table className="submitexam-exam-table">
                 <thead>
                   <tr>
                     <th>Applicant Name</th>
@@ -109,7 +101,7 @@ function SubmitExam() {
                           value={applicant.examDate}
                           onChange={(e) => handleInputChange(index, "examDate", e.target.value)}
                           placeholder="DD/MM/YY"
-                          className="exam-input"
+                          className="submitexam-exam-input"
                         />
                       </td>
                       <td>
@@ -118,7 +110,7 @@ function SubmitExam() {
                           value={applicant.interviewDate}
                           onChange={(e) => handleInputChange(index, "interviewDate", e.target.value)}
                           placeholder="DD/MM/YY"
-                          className="exam-input"
+                          className="submitexam-exam-input"
                         />
                       </td>
                       <td>
@@ -127,19 +119,19 @@ function SubmitExam() {
                           value={applicant.interviewTime}
                           onChange={(e) => handleInputChange(index, "interviewTime", e.target.value)}
                           placeholder="HH.MM-HH.MM"
-                          className="exam-input"
+                          className="submitexam-exam-input"
                         />
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-              <button className="submit-button" onClick={handleSubmit}>
+              <button className="submitexam-submit-button" onClick={handleSubmit}>
                 Submit
               </button>
             </>
           ) : (
-            <div className="no-applicants">
+            <div className="submitexam-no-applicants">
               No applicants selected. Please go back and select at least one applicant.
             </div>
           )}

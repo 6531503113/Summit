@@ -16,12 +16,13 @@ import Morepersonnal from './morepersonnal';
 import MoreAnnouncement from './MoreAnnouncement';
 import SubmitExam from './SubmitExam';
 import EditJob from './EditJob';
+import MoreJobs from './MoreJobs'; // เพิ่ม import หน้า MoreJobs
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/' element={<AddAnnouncement/>} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/addAnnouncement' element={<AddAnnouncement />} />
         <Route path='/addjob' element={<Addjob />} />
@@ -37,6 +38,7 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/moreannouncement/:jobId' element={<MoreAnnouncement />} />
         <Route path='/submitexam' element={<SubmitExam />} />
+        <Route path='/morejobs/:applicantId' element={<MoreJobs />} /> {/* เพิ่มเส้นทางสำหรับ MoreJobs */}
       </Routes>
     </BrowserRouter>
   );

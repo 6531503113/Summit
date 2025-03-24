@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./addpersonnel.css"; // Using the original CSS to avoid impacting other pages
+import "./addpersonnel.css";
 
 function AddPersonnel() {
   const navigate = useNavigate();
@@ -91,33 +91,33 @@ function AddPersonnel() {
   };
 
   return (
-    <div className="addpersonnel recruitment-container">
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2 className="sidebar-title">Admin</h2>
-        <ul className="sidebar-menu">
-          <li><Link to="/personnelinformation" className="sidebar-link">Personal Information</Link></li>
-          <li><Link to="/addAnnouncement" className="sidebar-link">Announcement</Link></li>
-          <h4 className="sidebar-subheader">Recruitment</h4>
-          <li><Link to="/jobs" className="sidebar-link">Jobs</Link></li>
-          <li><Link to="/examinationresults" className="sidebar-link">Examination Results</Link></li>
-          <li><Link to="/checklist" className="sidebar-link">Check List</Link></li>
+    <div className="addpersonnel-container">
+      <aside className="addpersonnel-sidebar">
+        <div className="addpersonnel-logo"></div>
+        <h2 className="addpersonnel-sidebar-title">Admin</h2>
+        <ul className="addpersonnel-sidebar-menu">
+          <li><Link to="/personnelinformation" className="addpersonnel-sidebar-link">Personnel Information</Link></li>
+          <li><Link to="/addAnnouncement" className="addpersonnel-sidebar-link">Announcement</Link></li>
+          <h4 className="addpersonnel-sidebar-subheader">Recruitment</h4>
+          <li><Link to="/jobs" className="addpersonnel-sidebar-link">Jobs</Link></li>
+          <li><Link to="/examinationresults" className="addpersonnel-sidebar-link">Examination Results</Link></li>
+          <li><Link to="/checklist" className="addpersonnel-sidebar-link">Check List</Link></li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={handleLogout}>Log Out</button>
+        <div className="addpersonnel-logout-container">
+          <button className="addpersonnel-logout-button" onClick={handleLogout}>Log Out</button>
         </div>
       </aside>
 
-      <div className="main-content">
-        <header className="header">
-          <h1 className="header-title">Personnel Information</h1>
+      <div className="addpersonnel-main-content">
+        <header className="addpersonnel-header">
+          <h1 className="addpersonnel-header-title">Personnal Information</h1>
         </header>
-        <div className="form-container">
-          <h1 className="form-title">Personnel Information</h1> {/* เพิ่มหัวข้อหลักให้เหมือนในภาพ */}
+        <div className="addpersonnel-form-container">
           
-          <div className="form-section">
+          
+          <div className="addpersonnel-form-section">
             <h2>Personal Information</h2>
-            <div className="form-row">
+            <div className="addpersonnel-form-row">
               <input 
                 type="text" 
                 name="name" 
@@ -137,7 +137,7 @@ function AddPersonnel() {
                 title="Please enter only numbers"
               />
             </div>
-            <div className="form-row">
+            <div className="addpersonnel-form-row">
               <input 
                 type="tel" 
                 name="phoneNumber" 
@@ -155,7 +155,7 @@ function AddPersonnel() {
                 placeholder="Email Address" 
               />
             </div>
-            <div className="form-row">
+            <div className="addpersonnel-form-row">
               <input 
                 type="date" 
                 name="dateOfBirth" 
@@ -171,7 +171,7 @@ function AddPersonnel() {
                 placeholder="Address" 
               />
             </div>
-            <div className="form-row">
+            <div className="addpersonnel-form-row">
               <select 
                 name="rights" 
                 value={formData.rights} 
@@ -191,9 +191,9 @@ function AddPersonnel() {
             </div>
           </div>
 
-          <div className="form-section">
+          <div className="addpersonnel-form-section">
             <h2>Employment Information</h2>
-            <div className="form-row">
+            <div className="addpersonnel-form-row">
               <input 
                 type="date" 
                 name="dateOfEmployment" 
@@ -213,9 +213,9 @@ function AddPersonnel() {
             </div>
           </div>
 
-          <div className="form-section">
+          <div className="addpersonnel-form-section">
             <h2>Education</h2>
-            <div className="form-row">
+            <div className="addpersonnel-form-row">
               <select 
                 name="educationLevel" 
                 value={formData.educationLevel} 
@@ -236,7 +236,7 @@ function AddPersonnel() {
                 title="Please enter only letters, spaces, hyphens, or apostrophes"
               />
             </div>
-            <div className="form-row">
+            <div className="addpersonnel-form-row">
               <input 
                 type="text" 
                 name="institution" 
@@ -256,7 +256,7 @@ function AddPersonnel() {
                 title="Please enter a 4-digit year (numbers only)"
               />
             </div>
-            <div className="form-row">
+            <div className="addpersonnel-form-row">
               <input 
                 type="text" 
                 name="gpa" 
@@ -269,7 +269,7 @@ function AddPersonnel() {
             </div>
           </div>
 
-          <button className="save-button" onClick={handleSave}>Save</button>
+          <button className="addpersonnel-save-button" onClick={handleSave}>Save</button>
         </div>
       </div>
     </div>

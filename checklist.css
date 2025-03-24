@@ -1,228 +1,254 @@
-/* General container styling */
-.recruitment-container {
+/* ----------------------------------------- */
+/* 🌟 Main Structure */
+/* ----------------------------------------- */
+.checklist-container {
   display: flex;
-  min-height: 100vh;
-  background-color: #f5f7fa; /* Light gray-blue background for a clean look */
-  font-family: 'Roboto', sans-serif; /* Professional font */
+  height: 100vh;
+  font-family: "Arial", sans-serif;
 }
 
-/* Sidebar */
-.sidebar {
+/* ----------------------------------------- */
+/* 📌 Sidebar (ปรับให้เหมือน PersonnelInformation.css) */
+/* ----------------------------------------- */
+.checklist-sidebar {
   width: 250px;
-  background: #253d90;
-  color: #ffffff;
+  background-color: #E3F2FD !important;
+  color: #000000;
   padding: 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar h2 {
-  color: #ffffff;
-  margin-top: 120px;
-  font-size: 24px;
-  font-weight: 600;
+.checklist-logo {
+  height: 50px;
+  margin-bottom: 15px;
+  background: url("./assets/logo.png") no-repeat center center/contain;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checklist-sidebar-title {
   text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #000000 !important;
 }
 
-.sidebar h4 {
-  font-size: 14px;
-  color: #d3d3d3;
-  margin-top: 20px;
-  text-transform: uppercase;
-}
-
-.sidebar ul {
+.checklist-sidebar-menu {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
 }
 
-.sidebar ul li {
-  padding: 10px 15px;
+.checklist-sidebar-menu li {
+  padding: 12px 0;
 }
 
-.sidebar ul li a {
-  color: #ffffff;
+.checklist-sidebar-link {
+  color: #000000 !important;
   text-decoration: none;
-  display: block;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
 }
 
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
-  background: #344e9e;
-  padding: 10px 15px;
-  border-radius: 5px;
+.checklist-sidebar-link:hover {
+  background-color: #E0E0E0 !important;
+  padding-left: 10px;
+  transition: 0.3s ease-in-out;
 }
 
-.logout-container {
+.checklist-sidebar-subheader {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000 !important;
+  margin: 15px 0 10px 0;
+  padding-left: 12px;
+  text-align: left;
+}
+
+/* ----------------------------------------- */
+/* 🔐 Logout Button */
+/* ----------------------------------------- */
+.checklist-logout-container {
   margin-top: auto;
+  text-align: center;
   padding-top: 20px;
+  border-top: 1px solid #D3D3D3;
 }
 
-.logout-button {
-  width: 100%;
-  padding: 12px;
-  background: #ff4d4d;
-  color: #ffffff;
+.checklist-logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 18px;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.logout-button:hover {
-  background: #e63939;
-}
-
-/* Logo styling */
-.logo {
-  background: url("./assets/logo.png") no-repeat center center/contain;
-  height: 100px;
-  position: absolute;
-  left: 20px;
-  top: 20px;
-}
-
-/* Main content */
-.main-content {
-  margin-left: 250px;
-  padding: 30px;
-  flex: 1;
-  min-height: 100vh;
-}
-
-.header {
-  margin-bottom: 30px;
-}
-
-.header-title {
-  font-size: 28px;
-  color: #253d90; /* Dark blue for a formal look */
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-/* Checklist Section */
-.checklist-section {
-  background: #ffffff; /* White background for a clean look */
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
   width: 100%;
-  max-width: 800px; /* Wider to accommodate the table */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.checklist-logout-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* ----------------------------------------- */
+/* 📄 Main Content */
+/* ----------------------------------------- */
+.checklist-main-content {
+  flex: 1;
+  padding: 40px;
+  background-color: #f7f8fa;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checklist-header {
+  background-color: transparent;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 1000px;
+  border-bottom: 2px solid #2c3e50;
+}
+
+.checklist-header-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.checklist-section {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d1d5db;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Checklist Table */
 .checklist-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 30px;
-  border: 1px solid #e0e0e0;
+  margin-bottom: 40px;
+  border: 1px solid #d1d5db;
 }
 
 .checklist-table th,
 .checklist-table td {
-  padding: 12px 15px;
+  padding: 15px 20px;
   text-align: left;
   font-size: 16px;
-  color: #333333;
-  border-bottom: 1px solid #e0e0e0;
+  color: #2c3e50;
+  border-bottom: 1px solid #d1d5db;
 }
 
 .checklist-table th {
-  background: #253d90; /* Dark blue header background */
+  background: #2c3e50;
   color: #ffffff;
   font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .checklist-table td {
   background: #ffffff;
-  text-align: center; /* Center checkboxes */
 }
 
 .checklist-table tr:nth-child(even) td {
-  background: #f9f9f9; /* Slight gray for alternating rows */
+  background: #fafafa;
 }
 
-/* Checkbox styling */
 .checklist-input {
   width: 18px;
   height: 18px;
-  accent-color: #253d90; /* Match the theme */
+  accent-color: #ff0000;
   cursor: pointer;
 }
 
-/* No applicants message */
-.no-applicants {
+.checklist-no-applicants {
   font-size: 18px;
-  color: #777777;
+  color: #2c3e50;
   text-align: center;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 5px;
-  border: 1px solid #e0e0e0;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
 }
 
-/* Save button */
-.save-button {
-  background: #253d90; /* Dark blue to match the formal theme */
+.checklist-save-button {
+  background: #ff0000;
   color: #ffffff;
   border: none;
   padding: 12px 30px;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   display: block;
   margin: 0 auto;
-  transition: background-color 0.3s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease-in-out;
+  letter-spacing: 1px;
 }
 
-.save-button:hover {
-  background: #344e9e;
-}
-
-.save-button:active {
-  transform: scale(0.98);
+.checklist-save-button:hover {
+  background: #cc0000;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .sidebar {
-    width: 200px;
+  .checklist-sidebar {
+    width: 180px;
+    padding: 10px;
   }
 
-  .main-content {
-    margin-left: 200px;
-    padding: 15px;
+  .checklist-main-content {
+    padding: 25px;
   }
 
-  .header-title {
-    font-size: 24px;
+  .checklist-header {
+    padding: 15px 0;
+    margin-bottom: 20px;
+  }
+
+  .checklist-header-title {
+    font-size: 26px;
   }
 
   .checklist-section {
-    padding: 15px;
+    padding: 25px;
     max-width: 100%;
   }
 
   .checklist-table th,
   .checklist-table td {
     font-size: 14px;
-    padding: 8px 10px;
+    padding: 10px 12px;
   }
 
   .checklist-input {
@@ -230,13 +256,13 @@
     height: 16px;
   }
 
-  .no-applicants {
+  .checklist-no-applicants {
     font-size: 16px;
-    padding: 15px;
+    padding: 20px;
   }
 
-  .save-button {
-    font-size: 14px;
-    padding: 10px 20px;
+  .checklist-save-button {
+    width: 100%;
+    padding: 12px;
   }
 }

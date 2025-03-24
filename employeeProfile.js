@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./employeeProfile.css";
+import "./employeeProfile.css"; // ปรับชื่อไฟล์ให้ตัวใหญ่ตาม convention
 
 function EmployeeProfile() {
   const navigate = useNavigate();
@@ -61,46 +61,46 @@ function EmployeeProfile() {
   };
 
   return (
-    <div className="employee-container">
+    <div className="employeeprofile-container">
       {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2 className="sidebar-title">Employee</h2>
-        <ul className="sidebar-menu">
+      <aside className="employeeprofile-sidebar">
+        <div className="employeeprofile-logo"></div>
+        <h2 className="employeeprofile-sidebar-title">Employee</h2>
+        <ul className="employeeprofile-sidebar-menu">
           <li>
-            <Link to="/profile" className="sidebar-link active">
-            Personal Information
+            <Link to="/profile" className="employeeprofile-sidebar-link active">
+              Personal Information
             </Link>
           </li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={handleLogout}>
+        <div className="employeeprofile-logout-container">
+          <button className="employeeprofile-logout-button" onClick={handleLogout}>
             Log Out
           </button>
         </div>
       </aside>
 
       {/* Main Content */}
-      <div className="main-content">
-        <header className="header">
-          <h1 className="header-title">Employees</h1>
+      <div className="employeeprofile-main-content">
+        <header className="employeeprofile-header">
+          <h1 className="employeeprofile-header-title">Employees</h1>
         </header>
 
         {/* Profile Form */}
-        <div className="profile-form">
-          <div className="profile-header">
-            <button className="add-photo-button">Add photo</button>
+        <div className="employeeprofile-profile-form">
+          <div className="employeeprofile-profile-header">
+            <button className="employeeprofile-add-photo-button">Add photo</button>
             <h2>Personal Information</h2>
-            <button className="edit-button">Edit Profile</button>
+            <button className="employeeprofile-edit-button">Edit Profile</button>
           </div>
 
           {/* Personal Information */}
-          <div className="info-section">
-            <div className="form-group">
-              <label>Personnal Information</label>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Name - Last name</span>
+          <div className="employeeprofile-info-section">
+            <div className="employeeprofile-form-group">
+              <label>Personal Information</label>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Name - Last name</span>
                   <input
                     type="text"
                     placeholder="Last Name, First Name"
@@ -111,8 +111,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Employee Code</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Employee Code</span>
                   <input
                     type="text"
                     placeholder="ES-XXXX-XX"
@@ -124,9 +124,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">ID Card</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">ID Card</span>
                   <input
                     type="text"
                     placeholder="ID Card"
@@ -137,8 +137,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Phone Number</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Phone Number</span>
                   <input
                     type="text"
                     placeholder="Phone Number"
@@ -150,9 +150,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Birthdate</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Birthdate</span>
                   <input
                     type="text"
                     placeholder="Birth Date"
@@ -163,8 +163,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Nationality</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Nationality</span>
                   <input
                     type="text"
                     placeholder="Nationality"
@@ -176,9 +176,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Ethnicity</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Ethnicity</span>
                   <input
                     type="text"
                     placeholder="Ethnicity"
@@ -189,8 +189,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Religion</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Religion</span>
                   <input
                     type="text"
                     placeholder="Religion"
@@ -202,9 +202,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Blood Type</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Blood Type</span>
                   <input
                     type="text"
                     placeholder="Blood Type"
@@ -215,8 +215,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Job Position</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Job Position</span>
                   <input
                     type="text"
                     placeholder="Job Position"
@@ -228,9 +228,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group full-width">
-                  <span className="input-label">Start work date</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group full-width">
+                  <span className="employeeprofile-input-label">Start work date</span>
                   <input
                     type="text"
                     placeholder="Start work date"
@@ -245,11 +245,11 @@ function EmployeeProfile() {
             </div>
 
             {/* Address */}
-            <div className="form-group">
+            <div className="employeeprofile-form-group">
               <label>Address</label>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">House Number</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">House Number</span>
                   <input
                     type="text"
                     placeholder="House Number"
@@ -260,8 +260,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Road</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Road</span>
                   <input
                     type="text"
                     placeholder="Street"
@@ -273,9 +273,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Subdistrict</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Subdistrict</span>
                   <input
                     type="text"
                     placeholder="Subdistrict"
@@ -286,8 +286,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">District</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">District</span>
                   <input
                     type="text"
                     placeholder="District"
@@ -299,9 +299,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Province</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Province</span>
                   <input
                     type="text"
                     placeholder="Province"
@@ -312,8 +312,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Postal Code</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Postal Code</span>
                   <input
                     type="text"
                     placeholder="Postal Code"
@@ -328,12 +328,12 @@ function EmployeeProfile() {
             </div>
 
             {/* Educational History */}
-            <div className="form-group">
+            <div className="employeeprofile-form-group">
               <label>Educational History</label>
               <h3>High School</h3>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Graduated From</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Graduated From</span>
                   <input
                     type="text"
                     placeholder="Graduated From"
@@ -348,8 +348,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Date of Graduation</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Date of Graduation</span>
                   <input
                     type="text"
                     placeholder="Date of Graduation"
@@ -365,9 +365,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group full-width">
-                  <span className="input-label">GPA</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group full-width">
+                  <span className="employeeprofile-input-label">GPA</span>
                   <input
                     type="text"
                     placeholder="GPA"
@@ -385,9 +385,9 @@ function EmployeeProfile() {
               </div>
 
               <h3>University</h3>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Faculty</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Faculty</span>
                   <input
                     type="text"
                     placeholder="Faculty"
@@ -402,8 +402,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Degree</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Degree</span>
                   <input
                     type="text"
                     placeholder="Degree"
@@ -419,9 +419,9 @@ function EmployeeProfile() {
                   />
                 </div>
               </div>
-              <div className="input-row">
-                <div className="input-group">
-                  <span className="input-label">Major</span>
+              <div className="employeeprofile-input-row">
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Major</span>
                   <input
                     type="text"
                     placeholder="Major"
@@ -436,8 +436,8 @@ function EmployeeProfile() {
                     readOnly
                   />
                 </div>
-                <div className="input-group">
-                  <span className="input-label">Date of Graduation</span>
+                <div className="employeeprofile-input-group">
+                  <span className="employeeprofile-input-label">Date of Graduation</span>
                   <input
                     type="text"
                     placeholder="Date of Graduation"
@@ -456,7 +456,7 @@ function EmployeeProfile() {
             </div>
           </div>
 
-          <button className="save-button" onClick={handleSave}>
+          <button className="employeeprofile-save-button" onClick={handleSave}>
             SAVE
           </button>
         </div>

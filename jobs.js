@@ -1,20 +1,23 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom"; 
+import { useNavigate, Link } from "react-router-dom";
 import "./jobs.css";
 
 function Jobs() {
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState("Employees"); // State to manage selected category
+  const [selectedCategory, setSelectedCategory] = useState("Employees");
 
   const handleLogout = () => {
     navigate("/home");
   };
 
   const handleListClick = () => {
-    navigate("/listjobs"); // Navigate to ListJobs page
+    navigate("/listjobs");
   };
 
-  // Sample data with categories and positions
+  const handleJobCardClick = (index) => {
+    navigate(`/morejobs/${index}`); // ส่ง index ไปเป็น applicantId
+  };
+
   const jobData = [
     { name: "Mr. Somchai Chatthai", education: "Bachelor's degrees", age: 22, experience: "-", position: "Programmer", category: "Employees" },
     { name: "Mr. Pitak Cheiywchay", education: "Education: -", age: 20, experience: "-", position: "System Analyst", category: "Employees" },
@@ -22,47 +25,66 @@ function Jobs() {
     { name: "Mr. Sudjab Themak", education: "Bachelor's degrees", age: 46, experience: "12 years", position: "Programmer", category: "Internships", closed: true },
   ];
 
-  // Filter jobs based on the selected category
   const filteredJobs = jobData.filter(job => job.category === selectedCategory);
 
   return (
-    <div className="recruitment-container">
-      {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2>Admin</h2>
-        <ul>
-          <li><Link to="/personnelinformation" className="sidebar-link">Personal Information</Link></li>
-          <li><Link to="/addAnnouncement" className="sidebar-link">Announcement</Link></li>
-          <h4>Recruitment</h4>
-          <li><Link to="/jobs" className="sidebar-link">Jobs</Link></li>
-          <li><Link to="/examinationresults" className="sidebar-link">Examination Results</Link></li>
-          <li><Link to="/checklist" className="sidebar-link">Check List</Link></li>
+    <div className="jobs-container">
+      <aside className="jobs-sidebar">
+        <div className="jobs-logo"></div>
+        <h2 className="jobs-sidebar-title">Admin</h2>
+        <ul className="jobs-sidebar-menu">
+          <li>
+            <Link to="/personnelinformation" className="jobs-sidebar-link">
+              Personnel Information
+            </Link>
+          </li>
+          <li>
+            <Link to="/addAnnouncement" className="jobs-sidebar-link">
+              Announcement
+            </Link>
+          </li>
+          <h4 className="jobs-sidebar-subheader">Recruitment</h4>
+          <li>
+            <Link to="/jobs" className="jobs-sidebar-link active">
+              Jobs
+            </Link>
+          </li>
+          <li>
+            <Link to="/examinationresults" className="jobs-sidebar-link">
+              Examination Results
+            </Link>
+          </li>
+          <li>
+            <Link to="/checklist" className="jobs-sidebar-link">
+              Check List
+            </Link>
+          </li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={handleLogout}>Log Out</button>
+        <div className="jobs-logout-container">
+          <button className="jobs-logout-button" onClick={handleLogout}>
+            Log Out
+          </button>
         </div>
       </aside>
 
-      {/* Main Content */}
-      <div className="main-content">
-        <header className="header">
-          <h1>Jobs</h1>
-          {/* List Button aligned to the right */}
-          <button className="list-button" onClick={handleListClick}>List</button>
+      <div className="jobs-main-content">
+        <header className="jobs-header">
+          <h1 className="jobs-header-title">Jobs</h1>
+          <button className="jobs-list-button" onClick={handleListClick}>
+            List
+          </button>
         </header>
 
-        {/* Announcement Categories */}
-        <div className="announcement-categories">
-          <div className="category-tabs">
+        <div className="jobs-announcement-categories">
+          <div className="jobs-category-tabs">
             <button
-              className={`category-tab ${selectedCategory === "Employees" ? "active" : ""}`}
+              className={`jobs-category-tab ${selectedCategory === "Employees" ? "active" : ""}`}
               onClick={() => setSelectedCategory("Employees")}
             >
               Employees
             </button>
             <button
-              className={`category-tab ${selectedCategory === "Internships" ? "active" : ""}`}
+              className={`jobs-category-tab ${selectedCategory === "Internships" ? "active" : ""}`}
               onClick={() => setSelectedCategory("Internships")}
             >
               Internships
@@ -70,16 +92,20 @@ function Jobs() {
           </div>
         </div>
 
-        {/* Job Status Section */}
-        <div className="job-status">
-          <div className="job-cards">
+        <div className="jobs-job-status">
+          <div className="jobs-job-cards">
             {filteredJobs.map((job, index) => (
-              <div key={index} className={`job-card ${job.closed ? "closed" : ""}`}>
+              <div
+                key={index}
+                className={`jobs-job-card ${job.closed ? "closed" : ""}`}
+                onClick={() => handleJobCardClick(index)} // เพิ่ม onClick เพื่อนำทางไปหน้า MoreJobs
+                style={{ cursor: "pointer" }} // เพิ่ม cursor เพื่อบ่งบอกว่าคลิกได้
+              >
                 <h4>{job.name}</h4>
-                <p className="job-description1">Position: {job.position}</p>
-                <p className="job-description2">{job.education}</p>
-                <p className="job-description3">Age: {job.age}</p>
-                <p className="job-description4">Work experience: {job.experience}</p>
+                <p className="jobs-job-description1">Position: {job.position}</p>
+                <p className="jobs-job-description2">{job.education}</p>
+                <p className="jobs-job-description3">Age: {job.age}</p>
+                <p className="jobs-job-description4">Work experience: {job.experience}</p>
               </div>
             ))}
           </div>

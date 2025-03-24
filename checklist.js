@@ -6,10 +6,8 @@ function CheckList() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get the applicants from the navigation state (if passed from ExaminationResults)
   const { selectedApplicants = [] } = location.state || {};
 
-  // Filter applicants with totalScore >= 150 (or use your own criteria)
   const qualifiedApplicants = selectedApplicants.length > 0
     ? selectedApplicants.filter(applicant => applicant.totalScore >= 150)
     : [
@@ -17,7 +15,6 @@ function CheckList() {
         { name: "Mr. Sudjab Themak" },
       ];
 
-  // Initialize checklist state for qualified applicants
   const initialChecklist = qualifiedApplicants.reduce((acc, applicant) => {
     acc[applicant.name] = {
       employeeCard: false,
@@ -46,36 +43,33 @@ function CheckList() {
 
   const handleSave = () => {
     console.log("Checklist saved:", checklist);
-    // Add your save logic here (e.g., API call)
     alert("Checklist saved successfully!");
-    navigate("/jobs"); // Navigate back to jobs or another page
+    navigate("/jobs");
   };
 
   return (
-    <div className="recruitment-container">
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2 className="sidebar-title">Admin</h2>
-        <ul className="sidebar-menu">
-          <li><Link to="/personnelinformation" className="sidebar-link">Personnel Information</Link></li>
-          <li><Link to="/addAnnouncement" className="sidebar-link">Announcement</Link></li>
-          <h4 className="sidebar-subheader">Recruitment</h4>
-          <li><Link to="/jobs" className="sidebar-link">Jobs</Link></li>
-          <li><Link to="/examinationresults" className="sidebar-link">Examination Results</Link></li>
-          <li><Link to="/checklist" className="sidebar-link active">Check List</Link></li>
+    <div className="checklist-container">
+      <aside className="checklist-sidebar">
+        <div className="checklist-logo"></div>
+        <h2 className="checklist-sidebar-title">Admin</h2>
+        <ul className="checklist-sidebar-menu">
+          <li><Link to="/personnelinformation" className="checklist-sidebar-link">Personnel Information</Link></li>
+          <li><Link to="/addAnnouncement" className="checklist-sidebar-link">Announcement</Link></li>
+          <h4 className="checklist-sidebar-subheader">Recruitment</h4>
+          <li><Link to="/jobs" className="checklist-sidebar-link">Jobs</Link></li>
+          <li><Link to="/examinationresults" className="checklist-sidebar-link">Examination Results</Link></li>
+          <li><Link to="/checklist" className="checklist-sidebar-link active">Check List</Link></li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={handleLogout}>Log Out</button>
+        <div className="checklist-logout-container">
+          <button className="checklist-logout-button" onClick={handleLogout}>Log Out</button>
         </div>
       </aside>
 
-      {/* Main Content */}
-      <div className="main-content">
-        <header className="header">
-          <h1 className="header-title">Check List of Qualified Programmers</h1>
+      <div className="checklist-main-content">
+        <header className="checklist-header">
+          <h1 className="checklist-header-title">Check List of Qualified Programmers</h1>
         </header>
 
-        {/* Checklist Section */}
         <div className="checklist-section">
           {Object.entries(checklist).length > 0 ? (
             <table className="checklist-table">
@@ -129,11 +123,11 @@ function CheckList() {
               </tbody>
             </table>
           ) : (
-            <div className="no-applicants">
+            <div className="checklist-no-applicants">
               No applicants qualified for the checklist.
             </div>
           )}
-          <button className="save-button" onClick={handleSave}>Save</button>
+          <button className="checklist-save-button" onClick={handleSave}>Save</button>
         </div>
       </div>
     </div>

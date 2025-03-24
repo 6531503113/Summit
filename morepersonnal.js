@@ -6,7 +6,6 @@ function Morepersonnal() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get the person data from the location state, or use default data if none is provided
   const personalInfo = location.state?.person || {
     name: "Mr. Glomkiao Lammakmai",
     nationalId: "1578805564589",
@@ -28,125 +27,109 @@ function Morepersonnal() {
     navigate("/home");
   };
 
-  const handleEdit = () => {
-    // Navigate to EditJobs with the personal info and use nationalId as personId
-    navigate(`/editjobs/${personalInfo.nationalId}`, { state: { person: personalInfo } });
-  };
-
   return (
-    <div className="recruitment-container">
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2 className="sidebar-title">Admin</h2>
-        <ul className="sidebar-menu">
+    <div className="morepersonnal-container">
+      <aside className="morepersonnal-sidebar">
+        <div className="morepersonnal-logo"></div>
+        <h2 className="morepersonnal-sidebar-title">Admin</h2>
+        <ul className="morepersonnal-sidebar-menu">
           <li>
-            <Link to="/personnelinformation" className="sidebar-link">
-              Personal Information
+            <Link to="/personnelinformation" className="morepersonnal-sidebar-link active">
+              Personnel Information
             </Link>
           </li>
           <li>
-            <Link to="/addAnnouncement" className="sidebar-link">
+            <Link to="/addAnnouncement" className="morepersonnal-sidebar-link">
               Announcement
             </Link>
           </li>
-          <h4 className="sidebar-subheader">Recruitment</h4>
+          <h4 className="morepersonnal-sidebar-subheader">Recruitment</h4>
           <li>
-            <Link to="/jobs" className="sidebar-link">Jobs</Link>
+            <Link to="/jobs" className="morepersonnal-sidebar-link">Jobs</Link>
           </li>
           <li>
-            <Link to="/examinationresults" className="sidebar-link">
+            <Link to="/examinationresults" className="morepersonnal-sidebar-link">
               Examination Results
             </Link>
           </li>
           <li>
-            <Link to="/checklist" className="sidebar-link">Check List</Link>
+            <Link to="/checklist" className="morepersonnal-sidebar-link">Check List</Link>
           </li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={handleLogout}>
+        <div className="morepersonnal-logout-container">
+          <button className="morepersonnal-logout-button" onClick={handleLogout}>
             Log Out
           </button>
         </div>
       </aside>
 
-      {/* Main Content */}
-      <div className="main-content">
-        <header className="header">
-          <h1 className="header-title">Personnel Information</h1>
+      <div className="morepersonnal-main-content">
+        <header className="morepersonnal-header">
+          <h1 className="morepersonnal-header-title">Personnal Information</h1>
         </header>
-        <div className="personal-info-card">
-          <div className="header-container">
-            <button className="edit-button" onClick={handleEdit}>
-              Edit
-            </button>
-          </div>
-
-          {/* Personal Information Section */}
-          <div className="info-section">
-            <h3>Personal Information</h3>
-            <div className="info-grid">
-              <p className="info-item">
+        <div className="morepersonnal-personal-info-card">
+          <div className="morepersonnal-info-section">
+            <h3>Personel Information</h3>
+            <div className="morepersonnal-info-grid">
+              <p className="morepersonnal-info-item">
                 <strong>Name:</strong> <span>{personalInfo.name}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>National ID:</strong> <span>{personalInfo.nationalId}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Address:</strong> <span>{personalInfo.address}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Email Address:</strong> <span>{personalInfo.email}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Phone Number:</strong> <span>{personalInfo.phone}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Date of Birth:</strong> <span>{personalInfo.dateOfBirth}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Position:</strong> <span>{personalInfo.position}</span>
               </p>
             </div>
           </div>
 
-          {/* Employment Information Section */}
-          <div className="info-section">
+          <div className="morepersonnal-info-section">
             <h3>Employment Information</h3>
-            <div className="info-grid">
-              <p className="info-item">
+            <div className="morepersonnal-info-grid">
+              <p className="morepersonnal-info-item">
                 <strong>Date of Employment:</strong> <span>{personalInfo.dateOfEmployment}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Employment Status:</strong> <span>{personalInfo.employmentStatus}</span>
               </p>
             </div>
           </div>
 
-          {/* Education Information Section */}
-          <div className="info-section">
+          <div className="morepersonnal-info-section">
             <h3>Education Status</h3>
-            <div className="info-grid">
-              <p className="info-item">
+            <div className="morepersonnal-info-grid">
+              <p className="morepersonnal-info-item">
                 <strong>Education Level:</strong> <span>{personalInfo.educationLevel}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Institution:</strong> <span>{personalInfo.institution}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Graduation Year:</strong> <span>{personalInfo.graduationYear}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>Field of Study:</strong> <span>{personalInfo.fieldOfStudy}</span>
               </p>
-              <p className="info-item">
+              <p className="morepersonnal-info-item">
                 <strong>GPA:</strong> <span>{personalInfo.gpa}</span>
               </p>
             </div>
           </div>
 
-          {/* Officer Button */}
-          <div className="button-container">
-            <button className="officer-button">Officer</button>
+          <div className="morepersonnal-button-container">
+            <button className="morepersonnal-officer-button">Officer</button>
           </div>
         </div>
       </div>

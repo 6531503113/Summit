@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom"; // เพิ่ม Link
 import axios from "axios";
 import "./addjob.css";
 
-function EditJob() {
+function AddJob() {
   const { jobId } = useParams();
   const navigate = useNavigate();
 
@@ -54,35 +54,35 @@ function EditJob() {
   };
 
   return (
-    <div className="home-container">
-      <aside className="sidebar">
-        <div className="logo"></div>
-        <h2>Recruiting</h2>
-        <ul>
-          <li><a href="/personnelinformation">Personal Information</a></li>
-          <li><a href="/addAnnouncement">Announcement</a></li>
-          <h4>Recruitment</h4>
-          <li><a href="/jobs">Jobs</a></li>
-          <li><a href="/examinationresults">Examination results</a></li>
-          <li><a href="/checklist">Check list</a></li>
+    <div className="addjob-container">
+      <aside className="addjob-sidebar">
+        <div className="addjob-logo"></div>
+        <h2 className="addjob-sidebar-title">Recruiting</h2>
+        <ul className="addjob-sidebar-menu">
+          <li><Link to="/personnelinformation" className="addjob-sidebar-link">Personnel Information</Link></li>
+          <li><Link to="/addAnnouncement" className="addjob-sidebar-link">Announcement</Link></li>
+          <h4 className="addjob-sidebar-subheader">Recruitment</h4>
+          <li><Link to="/jobs" className="addjob-sidebar-link">Jobs</Link></li>
+          <li><Link to="/examinationresults" className="addjob-sidebar-link">Examination Results</Link></li>
+          <li><Link to="/checklist" className="addjob-sidebar-link">Check List</Link></li>
         </ul>
-        <div className="logout-container">
-          <button className="logout-button" onClick={() => navigate("/")}>Log Out</button>
+        <div className="addjob-logout-container">
+          <button className="addjob-logout-button" onClick={() => navigate("/")}>Log Out</button>
         </div>
       </aside>
 
-      <div className="main-content">
-        <header className="header">
-          <h1>Recruiting</h1>
+      <div className="addjob-main-content">
+        <header className="addjob-header">
+          <h1 className="addjob-header-title">Recruiting</h1>
         </header>
 
-        <div className="job-form-container">
-          <form className="job-form" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-section left">
+        <div className="addjob-form-container">
+          <form className="addjob-form" onSubmit={handleSubmit}>
+            <div className="addjob-row">
+              <div className="addjob-section left">
                 <label>Job position</label>
                 <select
-                  className="short-input"
+                  className="addjob-short-input"
                   name="title"
                   value={job.title}
                   onChange={handleChange}
@@ -150,7 +150,7 @@ function EditJob() {
                 />
               </div>
 
-              <div className="form-section right">
+              <div className="addjob-section right">
                 <label>Features</label>
 
                 <label>Application accepted until</label>
@@ -196,8 +196,8 @@ function EditJob() {
               </div>
             </div>
 
-            <div className="form-buttons">
-              <button type="submit" className="save-button">
+            <div className="addjob-buttons">
+              <button type="submit" className="addjob-save-button">
                 Save
               </button>
             </div>
@@ -208,4 +208,4 @@ function EditJob() {
   );
 }
 
-export default EditJob;
+export default AddJob;
