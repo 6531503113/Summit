@@ -189,6 +189,15 @@
   color: #2c3e50;
   background-color: #ffffff;
   transition: border-color 0.2s ease-in-out;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.submitexam-date-input {
+  min-width: 150px; /* Ensure date picker has enough space */
+}
+
+.submitexam-time-input {
+  min-width: 120px; /* Ensure time picker has enough space */
 }
 
 .submitexam-exam-input:focus {
@@ -197,8 +206,20 @@
   box-shadow: 0 0 3px rgba(255, 0, 0, 0.15);
 }
 
+/* Remove default placeholder since date/time inputs don't use it */
 .submitexam-exam-input::placeholder {
-  color: #6b7280;
+  color: transparent; /* Hide placeholder for date/time inputs */
+}
+
+/* Optional: Customize the appearance of date/time picker dropdown arrow */
+.submitexam-exam-input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 5px;
+  filter: invert(40%) sepia(50%) saturate(500%) hue-rotate(320deg); /* Subtle red tint */
+}
+
+.submitexam-exam-input::-webkit-datetime-edit {
+  color: #2c3e50;
 }
 
 /* Submit Button */

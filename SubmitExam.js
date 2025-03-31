@@ -97,29 +97,26 @@ function SubmitExam() {
                       <td>{applicant.name}</td>
                       <td>
                         <input
-                          type="text"
+                          type="date"
                           value={applicant.examDate}
                           onChange={(e) => handleInputChange(index, "examDate", e.target.value)}
-                          placeholder="DD/MM/YY"
-                          className="submitexam-exam-input"
+                          className="submitexam-exam-input submitexam-date-input"
                         />
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="date"
                           value={applicant.interviewDate}
                           onChange={(e) => handleInputChange(index, "interviewDate", e.target.value)}
-                          placeholder="DD/MM/YY"
-                          className="submitexam-exam-input"
+                          className="submitexam-exam-input submitexam-date-input"
                         />
                       </td>
                       <td>
                         <input
-                          type="text"
+                          type="time"
                           value={applicant.interviewTime}
                           onChange={(e) => handleInputChange(index, "interviewTime", e.target.value)}
-                          placeholder="HH.MM-HH.MM"
-                          className="submitexam-exam-input"
+                          className="submitexam-exam-input submitexam-time-input"
                         />
                       </td>
                     </tr>
