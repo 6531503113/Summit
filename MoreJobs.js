@@ -6,7 +6,7 @@ function MoreJobs() {
   const navigate = useNavigate();
   const { applicantId } = useParams(); // รับ applicantId จาก URL
 
-  // ข้อมูลจำลอง (เหมือนใน Jobs.js)
+  // ข้อมูลจำลอง (เพิ่ม resume และ educationalCertificates)
   const jobData = [
     {
       name: "Mr. Somchai Chatthai",
@@ -19,6 +19,8 @@ function MoreJobs() {
       email: "JJ@gmail.com",
       dob: "14/03/2000",
       portfolio: "url-to-portfolio-file",
+      resume: "url-to-resume-file",
+      educationalCertificates: "url-to-educational-certificates-file",
       institution: "Mae Fah Luang University",
       faculty: "School of Information Technology",
       field_of_study: "Program in Software Engineering",
@@ -36,6 +38,8 @@ function MoreJobs() {
       email: "pitak@gmail.com",
       dob: "01/01/2003",
       portfolio: "url-to-portfolio-file",
+      resume: "url-to-resume-file",
+      educationalCertificates: "url-to-educational-certificates-file",
       institution: "-",
       faculty: "-",
       field_of_study: "-",
@@ -54,6 +58,8 @@ function MoreJobs() {
       email: "somying@gmail.com",
       dob: "15/05/1996",
       portfolio: "url-to-portfolio-file",
+      resume: "url-to-resume-file",
+      educationalCertificates: "url-to-educational-certificates-file",
       institution: "Chulalongkorn University",
       faculty: "Faculty of Engineering",
       field_of_study: "Computer Engineering",
@@ -72,6 +78,8 @@ function MoreJobs() {
       email: "sudjab@gmail.com",
       dob: "22/11/1977",
       portfolio: "url-to-portfolio-file",
+      resume: "url-to-resume-file",
+      educationalCertificates: "url-to-educational-certificates-file",
       institution: "Thammasat University",
       faculty: "Faculty of Science",
       field_of_study: "Computer Science",
@@ -141,7 +149,6 @@ function MoreJobs() {
         <div className="morejobs-applicant-info">
           {/* Applicant Header */}
           <div className="morejobs-applicant-header">
-           
             <div>
               <h3>{currentApplicant.name}</h3>
               <p>{currentApplicant.age} years old</p>
@@ -161,6 +168,26 @@ function MoreJobs() {
               <button
                 className="morejobs-portfolio-button"
                 onClick={() => window.open(currentApplicant.portfolio, "_blank")}
+              >
+                View file
+              </button>
+            </div>
+            <div className="morejobs-applicant-section">
+              <h4>Resume</h4>
+              <button
+                className="morejobs-portfolio-button"
+                onClick={() => window.open(currentApplicant.resume, "_blank")}
+              >
+                View file
+              </button>
+            </div>
+            <div className="morejobs-applicant-section">
+              <h4>Educational Certificates</h4>
+              <button
+                className="morejobs-portfolio-button"
+                onClick={() =>
+                  window.open(currentApplicant.educationalCertificates, "_blank")
+                }
               >
                 View file
               </button>
