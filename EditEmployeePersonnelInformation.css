@@ -1,0 +1,341 @@
+/* EditEmployeePersonnelInformation.css */
+
+/* Main Container */
+.EditEmployeePersonnelInformation-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Sidebar */
+  .EditEmployeePersonnelInformation-sidebar {
+    width: 250px;
+    background-color: #E3F2FD;
+    color: #000000;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  
+  .EditEmployeePersonnelInformation-logo {
+    height: 50px;
+    margin-bottom: 15px;
+    background: url("./assets/logo.png") no-repeat center center/contain;
+  }
+  
+  .EditEmployeePersonnelInformation-sidebar-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #000000;
+  }
+  
+  .EditEmployeePersonnelInformation-sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+  }
+  
+  .EditEmployeePersonnelInformation-sidebar-menu li {
+    padding: 12px 0;
+  }
+  
+  .EditEmployeePersonnelInformation-sidebar-menu li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 4px;
+  }
+  
+  .EditEmployeePersonnelInformation-sidebar-menu li a:hover {
+    background-color: #E0E0E0;
+  }
+  
+  .EditEmployeePersonnelInformation-sidebar-menu li a.active {
+    background-color: #D3D3D3;
+  }
+  
+  .EditEmployeePersonnelInformation-sidebar-subheader {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    margin: 15px 0 10px 0;
+    padding-left: 12px;
+  }
+  
+  /* Logout Button */
+  .EditEmployeePersonnelInformation-logout-container {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #D3D3D3;
+  }
+  
+  .EditEmployeePersonnelInformation-logout-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    width: 100%;
+  }
+  
+  .EditEmployeePersonnelInformation-logout-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Main Content */
+  .EditEmployeePersonnelInformation-main-content {
+    flex: 1;
+    padding: 30px;
+    background: #E8ECEF;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Header Section */
+  .EditEmployeePersonnelInformation-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 20px;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .EditEmployeePersonnelInformation-header-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+  }
+  
+  .EditEmployeePersonnelInformation-edit-button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .EditEmployeePersonnelInformation-edit-button:hover {
+    background: #c0392b;
+  }
+  
+  /* Content Container */
+  .EditEmployeePersonnelInformation-content-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 1000px;
+    border: 1px solid #d3d3d3;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .EditEmployeePersonnelInformation-content-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #333;
+  }
+  
+  /* User Header */
+  .EditEmployeePersonnelInformation-user-header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #d3d3d3;
+  }
+  
+  .EditEmployeePersonnelInformation-avatar-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .EditEmployeePersonnelInformation-user-avatar {
+    width: 80px;
+    height: 80px;
+    background: #d4d7dc;
+    border-radius: 50%;
+    border: 2px solid #333;
+  }
+  
+  .EditEmployeePersonnelInformation-photo-upload-label {
+    background: #d4d7dc;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .EditEmployeePersonnelInformation-photo-upload-input {
+    display: none;
+  }
+  
+  /* Section Styling */
+  .EditEmployeePersonnelInformation-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+  
+  .EditEmployeePersonnelInformation-section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+    position: relative;
+  }
+  
+  .EditEmployeePersonnelInformation-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #555;
+  }
+  
+  /* Grid Layout for Information */
+  .EditEmployeePersonnelInformation-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* Info Item Styling */
+  .EditEmployeePersonnelInformation-info-item {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.2s ease-in-out;
+  }
+  
+  .EditEmployeePersonnelInformation-info-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .EditEmployeePersonnelInformation-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .EditEmployeePersonnelInformation-input {
+    padding: 8px;
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    background: #fff;
+  }
+  
+  .EditEmployeePersonnelInformation-input:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Save Button */
+  .EditEmployeePersonnelInformation-save-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .EditEmployeePersonnelInformation-save-button {
+    background: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .EditEmployeePersonnelInformation-save-button:hover {
+    background: #27ae60;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .EditEmployeePersonnelInformation-info-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .EditEmployeePersonnelInformation-sidebar {
+      width: 200px;
+    }
+  
+    .EditEmployeePersonnelInformation-main-content {
+      padding: 20px;
+    }
+  
+    .EditEmployeePersonnelInformation-content-container {
+      padding: 20px;
+    }
+  
+    .EditEmployeePersonnelInformation-section {
+      padding: 15px;
+    }
+  
+    .EditEmployeePersonnelInformation-section-title {
+      font-size: 20px;
+    }
+  
+    .EditEmployeePersonnelInformation-info-item {
+      padding: 12px;
+    }
+  
+    .EditEmployeePersonnelInformation-label,
+    .EditEmployeePersonnelInformation-input {
+      font-size: 14px;
+    }
+  }
